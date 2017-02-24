@@ -51,10 +51,10 @@
 			</div>
 		</nav>
 		<main class="container">
-			<aside class="col-xs-3">
+			<aside class="col-xs-12 col-sm-4 col-md-3">
 				aside
 			</aside>
-			<article class="col-xs-9">
+			<article class="col-xs-12 col-sm-8 col-md-9">
 				MAIN CONTENT
 			</article>
 		</main>
