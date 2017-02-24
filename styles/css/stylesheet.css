@@ -9,12 +9,12 @@ button, .btn {
   box-shadow: 0 3px 5px -2px #bbb; }
 
 .text-primary {
-  color: #1d3210; }
+  color: #001601; }
 
 body {
   margin: 0;
   padding: 0;
-  background: #b39b76 url("/img/coffe-beans-bg.jpg") center center fixed;
+  background: #b39b76 url("/img/background.jpg") center center fixed;
   background-size: cover; }
 
 nav {
@@ -26,14 +26,9 @@ nav {
   top: 0; }
 
 .navbar-custom {
-  background-color: #f8f8f8;
+  background-color: #dfdfdf;
   border-color: #e7e7e7;
   border-radius: 0; }
-  .navbar-custom .navbar-brand {
-    color: #777; }
-    .navbar-custom .navbar-brand:hover, .navbar-custom .navbar-brand:focus {
-      color: #5e5e5e;
-      background-color: transparent; }
   .navbar-custom .navbar-text {
     color: #777; }
   .navbar-custom .navbar-nav > li > a {
@@ -87,11 +82,11 @@ main {
   display: -webkit-flex;
   display: flex;
   position: relative;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 50px);
   margin-top: 50px;
   z-index: 10;
   padding: 0 !important;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0;
   overflow: hidden; }
 
 aside {
@@ -104,7 +99,7 @@ aside {
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-  background: #1d3210; }
+  background: #001601; }
 
 article {
   -webkit-flex: 0 0 auto;

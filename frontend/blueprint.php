@@ -25,7 +25,9 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="/">Eine Welt Laden</a>
+							<a class="navbar-brand" href="/">
+								
+							</a>
 						</div>
 						<div class="collapse navbar-collapse" id="navbar-collapse">
 							<ul class="nav navbar-nav navbar-right">
@@ -49,10 +51,10 @@
 			</div>
 		</nav>
 		<main class="container">
-			<aside class="col-md-3">
+			<aside class="col-xs-3">
 				aside
 			</aside>
-			<article class="col-sm-9">
+			<article class="col-xs-9">
 				MAIN CONTENT
 			</article>
 		</main>
