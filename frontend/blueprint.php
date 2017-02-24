@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="/styles/css/stylesheet.css" />
 </head>
 <body>
-    <div class="wrapper">
+    <div id="wrapper">
 		<nav class="container">
 			<div class="row">
 				<div class="navbar navbar-custom">
