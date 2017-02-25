@@ -142,15 +142,6 @@ aside#sidebar {
   @media only screen and (min-width: 0) and (max-width: 767px) {
     aside#sidebar {
       display: none; } }
-  aside#sidebar img.logo {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    top: -50px;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-    z-index: 120; }
   aside#sidebar #floater {
     display: block;
     position: relative;

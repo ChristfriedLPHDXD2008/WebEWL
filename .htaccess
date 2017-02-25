@@ -1,0 +1,24 @@
+<files .htaccess>
+	order deny,allow
+	deny from all
+	satisfy all
+</files>
+<files config.php>
+	order deny,allow
+	deny from all
+	satisfy all
+</files>
+
+Options +FollowSymLinks -Indexes
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} !ewl.github
+RewriteCond %{HTTP_HOST} !localhost
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} ^/([^/]+)/?([^/]*)?/?([^/]*)?/?([^/]*)?/?([^/]*)?/?([^/]*)?/?([^/]*)?/? [NC]
+RewriteRule (.*) index.php?0=%1&1=%2&2=%3&3=%4&4=%5&5=%6&6=%7 [L,QSA]
