@@ -28,6 +28,9 @@
 			<div class="row">
 				<div class="navbar navbar-custom">
 					<div class="container-fluid">
+						<div class="col-xs-12 col-sm-4 col-md-3 logo hidden-xs">
+							<img src="/img/ewl-header-logo.png"/>
+						</div>
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
 								<span class="sr-only">Toggle navigation</span>
@@ -36,7 +39,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<a class="navbar-brand hidden-sm hidden-md hidden-lg" href="/">
-								"Pax et bonum" Eine Welt Laden e.V.
+								"Pax et bonum" - Eine Welt Laden e.V.
 							</a>
 						</div>
 						<div class="collapse navbar-collapse" id="navbar-collapse">
@@ -79,7 +82,7 @@
 			</aside>
 			<article class="col-xs-12 col-sm-8 col-md-9">
 				<h1>Eine Welt Laden e.V.</h1>
-				<div style="height:2000px"></div>
+				<div style="height: 2000px"></div>
 			</article>
 		</main>
     </div>
