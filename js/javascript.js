@@ -14,8 +14,4 @@ $(function(){
 	resizeAsideNav();
 });
 
-function resizeAsideNav() {
-	var floater = $("#floater");
-	$(".nav-pills").width(floater.width());
-	floater.addClass("visible");
-}
+function resizeAsideNav() {}

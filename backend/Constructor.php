@@ -6,6 +6,7 @@ class Constructor
 	public $error;
 	public $view;
 	public $title;
+	public $subs		= [];
 	public $modfile;
 	public $viewfile	= '.default';
 	public $cssfiles	= [];
@@ -20,6 +21,11 @@ class Constructor
 		
 		switch (@$_GET[0]) {
 			default:
+				$this->subs			=	array_merge($this->subs, [
+					"Pax et bonum"	=> "#",
+					"Fair Trade"	=> "#",
+					"Impressum"		=> "#"
+				]);
 				$this->cssfiles[]	= "start.css";
 				$this->viewfile		= "start.php";
 				break;
@@ -27,13 +33,38 @@ class Constructor
 				$this->viewfile		= "news.php";
 				break;
 			case "about":
+				$this->subs			=	array_merge($this->subs, [
+					"Ursprung"				=> "#",
+					"Anliegen des Vereins"	=> "#"
+				]);
 				$this->viewfile		= "about.php";
 				break;
 			case "verein":
+				$this->subs			=	array_merge($this->subs, [
+					"Vereinsleben"		=> "#",
+					"Veranstaltungen"	=> "#",
+					"Bildungsarbeit"	=> "#"
+				]);
 				$this->viewfile		= "verein.php";
 				break;
 			case "laden":
+				$this->subs			=	array_merge($this->subs, [
+					"Sortiment"		=> "#",
+					"Fair Trade"	=> "#",
+					"Bestellung"	=> "#",
+					"Standort"		=> "#",
+					"Mitarbeiter"	=> "#"
+				]);
 				$this->viewfile		= "store.php";
+				break;
+			case "kontakt":
+				$this->subs			=	array_merge($this->subs, [
+					"Kontakt"				=> "#",
+					"Öffnungszeiten"		=> "#",
+					"Anfahrt"				=> "#",
+					"Schreiben Sie uns an"	=> "#"
+				]);
+				$this->viewfile		= "contact.php";
 				break;
 		}
 		

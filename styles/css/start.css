@@ -3,7 +3,7 @@ button, .btn {
   button:focus, button:active, .btn:focus, .btn:active {
     outline: 0 !important; }
 
-@media (max-width: 817px) {
+@media (max-width: 816px) {
   .navbar-header {
     float: none; }
 

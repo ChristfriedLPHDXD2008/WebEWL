@@ -3,7 +3,7 @@ button, .btn {
   button:focus, button:active, .btn:focus, .btn:active {
     outline: 0 !important; }
 
-@media (max-width: 817px) {
+@media (max-width: 816px) {
   .navbar-header {
     float: none; }
 
@@ -64,8 +64,8 @@ nav {
   right: 0;
   top: 0; }
   nav #navbar-collapse {
-    max-height: calc(100vh - 50px);
-    overflow-y: auto; }
+    max-height: calc(100vh - 50px) !important;
+    overflow-y: auto !important; }
   nav div.logo {
     position: relative;
     width: 25%; }
@@ -82,9 +82,13 @@ nav {
           padding-right: 0;
           width: 160px;
           height: 160px; } }
-      @media only screen and (max-width: 817px) {
+      @media only screen and (max-width: 816px) {
         nav div.logo img {
           display: none; } }
+  nav .nav-straight-open-keeper {
+    height: 50px;
+    width: 0;
+    float: left; }
 
 .navbar-custom {
   background-color: #dfdfdf;
@@ -100,9 +104,9 @@ nav {
     color: #5e5e5e; }
   .navbar-custom .navbar-brand {
     display: none; }
-  @media only screen and (max-width: 817px) {
+  @media only screen and (max-width: 816px) {
     .navbar-custom .navbar-brand {
-      display: inline;
+      display: inline-block;
       max-width: calc(100vw - 65px);
       padding: 0 15px;
       line-height: 50px;
@@ -194,24 +198,30 @@ aside#sidebar {
       -webkit-order: 0;
       -ms-flex-order: 0;
       order: 0; } }
-  @media only screen and (max-width: 817px) {
+  @media only screen and (max-width: 816px) {
     aside#sidebar {
       display: none; } }
   aside#sidebar #floater {
     display: block;
     position: relative;
     margin-top: 150px;
-    opacity: 0;
     outline: 2px solid red;
-    outline-offset: -2px;
-    transition: opacity 0.02s ease; }
-    aside#sidebar #floater.visible {
-      opacity: 1; }
+    outline-offset: -2px; }
     aside#sidebar #floater .nav-pills {
       position: fixed;
       min-width: 200px;
       max-height: calc(100vh - 225px);
-      overflow-y: auto; }
+      overflow-y: auto;
+      width: auto; }
+      @media only screen and (min-width: 1200px) {
+        aside#sidebar #floater .nav-pills {
+          width: 262.5px; } }
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        aside#sidebar #floater .nav-pills {
+          width: 212.5px; } }
+      @media only screen and (min-width: 817px) and (max-width: 991px) {
+        aside#sidebar #floater .nav-pills {
+          width: 157.5px; } }
       aside#sidebar #floater .nav-pills li {
         margin: 15px 0;
         font-size: 18px; }
@@ -227,7 +237,7 @@ aside#sidebar {
           transition: 0.2s ease; }
           aside#sidebar #floater .nav-pills li a:hover {
             background: #ffdf84; }
-    @media only screen and (min-width: 817px) and (max-width: 992px) {
+    @media only screen and (min-width: 816px) and (max-width: 992px) {
       aside#sidebar #floater {
         margin-top: 100px; }
         aside#sidebar #floater .nav-pills {

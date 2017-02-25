@@ -2,7 +2,7 @@
 
 $constructor = Constructor::getInstance();
 
-$active = "class=\"active\"";
+$active = " class=\"active\"";
 $items = [
 	"Startseite"	=> "/",
 	"Aktuell"		=> "/aktuell",
@@ -15,7 +15,8 @@ $items = [
 ob_start();
 
 foreach ($items as $name => $page) {
-	?><li role="presentation"<?="/" . @$_GET[0] == $page ? $active : null ?>><a href="<?=$page?>"><?=$name?></a></li><?php
+?> 	<li role="presentation"<?="/" . @$_GET[0] == $page ? $active : null ?>><a href="<?=$page?>"><?=$name?></a></li>
+<?php
 }
 $nav = ob_get_clean(); /*
 ?>
@@ -75,6 +76,7 @@ if (!empty($constructor->jsfiles))
 							</a>
 						</div>
 						<div class="collapse navbar-collapse" id="navbar-collapse">
+							<div class="nav-straight-open-keeper"></div>
 							<span class="hidden-sm hidden-md hidden-lg"><br><em>Navigation</em></span>
 							<ul class="nav navbar-nav navbar-left hidden-sm hidden-md hidden-lg">
 <?=$nav?>
@@ -82,10 +84,13 @@ if (!empty($constructor->jsfiles))
 							<hr class="hidden-sm hidden-md hidden-lg">
 							<span class="hidden-sm hidden-md hidden-lg"><em>Auf dieser Seite</em></span>
 							<ul class="nav navbar-nav navbar-right">
-								<li class="active"><a href="#">Mehr</a></li>
-								<li ><a href="#">Links</a></li>
-								<li ><a href="#">Auf dieser</a></li>
-								<li ><a href="#">Seite</a></li>
+								<?php
+								$i = 0;
+								foreach ($constructor->subs as $name => $link) { ?>
+									
+									<li<?=$i==0?$active:null?>><a href="<?=$link?>"><?=$name?></a></li>
+								<?php $i++; } ?>
+								<!--<li class="active"><a href="#">Mehr</a></li>-->
 								<!--
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
