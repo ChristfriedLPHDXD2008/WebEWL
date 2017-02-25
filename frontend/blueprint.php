@@ -18,7 +18,7 @@
     <title>Eine Welt Laden</title>
     <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/javascript.js"></script>
+    <script type="text/javascript" src="/js/javascript.js" async></script>
 	<link rel="stylesheet" href="/styles/css/bootstrap.css" />
 	<link rel="stylesheet" href="/styles/css/stylesheet.css" />
 </head>
@@ -85,3 +85,9 @@
     </div>
 </body>
 </html>
+
+<script>
+	//$(document).ready(function () { resizeAsideNav(); });
+	$(window).load(function () { resizeAsideNav(); });
+	$(function () { resizeAsideNav(); })
+</script>

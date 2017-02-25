@@ -10,10 +10,6 @@ $(function(){
 	resizeAsideNav();
 });
 
-$(window).load(function () {
-	resizeAsideNav();
-});
-
 function resizeAsideNav() {
 	$(".nav-pills").width($("#floater").width());
 }

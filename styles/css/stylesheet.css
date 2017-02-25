@@ -140,7 +140,8 @@ aside#sidebar {
     left: 0;
     width: 100%; }
     aside#sidebar #floater .nav-pills {
-      position: fixed; }
+      position: fixed;
+      min-width: 100px; }
       aside#sidebar #floater .nav-pills li {
         margin: 15px;
         font-size: 18px; }
