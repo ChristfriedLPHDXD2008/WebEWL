@@ -10,7 +10,6 @@ class Constructor
 	public $viewfile	= '.default';
 	public $cssfiles	= [];
 	public $jsfiles		= [];
-	public $templates	= [];
 	
 	protected function __construct()
 	{
@@ -19,33 +18,37 @@ class Constructor
 	
 	public function build() {
 		
-		$admin = $_SESSION["admin"] ?? false;
-		
 		switch (@$_GET[0]) {
-			case "upload":
-				$this->jsfiles[]	= "fine-uploader.min.js";
-				$this->viewfile		= "upload.php";
-				$this->cssfiles[]	= "fine-uploader-new.min.css";
-				$this->cssfiles[]	= "uploader.css";
-				$this->templates["qq-template"]	= "rowbased.html";
+			default:
+				$this->cssfiles[]	= "start.css";
+				$this->viewfile		= "start.php";
 				break;
-			case "browse":
-				$this->viewfile		= "browse.php";
+			case "aktuell":
+				$this->viewfile		= "news.php";
+				break;
+			case "about":
+				$this->viewfile		= "about.php";
+				break;
+			case "verein":
+				$this->viewfile		= "verein.php";
+				break;
+			case "laden":
+				$this->viewfile		= "store.php";
 				break;
 		}
 		
 		switch ($this->view)
 		{
 			case "view" :
-				$this->title	= ($admin ? "Admin - " : null) . BILDSERV;
+				$this->title	= $this->title ?? TITLE;
 				$this->modfile	= __FRONTEND__ . "/view.php";
 				$this->cssfiles = array_merge(
-					[CSS_Bootstrap, CSS_ionicons, "hamburgers.min.css"],
+					[CSS_Bootstrap],
 					$this->cssfiles,
 					[CSS_styles]
 				);
 				$this->jsfiles	= array_merge(
-					[JS_jQuery, JS_Tether, JS_Bootstrap],
+					[JS_jQuery, JS_Bootstrap],
 					$this->jsfiles,
 					[JS_javascript]
 				);

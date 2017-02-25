@@ -3,6 +3,10 @@ $(function(){
 		$("body").toggleClass('noscroll');
 	});
 
+	$(".nav.nav-pills a").on('click', function () {
+		$("#floater").removeClass("visible");
+	});
+
 	$(window).resize(function(){
 		resizeAsideNav();
 	});
@@ -11,5 +15,7 @@ $(function(){
 });
 
 function resizeAsideNav() {
-	$(".nav-pills").width($("#floater").width());
+	var floater = $("#floater");
+	$(".nav-pills").width(floater.width());
+	floater.addClass("visible");
 }

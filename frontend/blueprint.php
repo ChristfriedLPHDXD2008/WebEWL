@@ -1,12 +1,32 @@
-<?php ob_start(); ?>
+<?php
+
+$constructor = Constructor::getInstance();
+
+$active = "class=\"active\"";
+$items = [
+	"Startseite"	=> "/",
+	"Aktuell"		=> "/aktuell",
+	"Über uns"		=> "/about",
+	"Verein"		=> "/verein",
+	"Laden"			=> "/laden",
+	"Kontakt"		=> "/kontakt"
+];
+
+ob_start();
+
+foreach ($items as $name => $page) {
+	?><li role="presentation"<?="/" . @$_GET[0] == $page ? $active : null ?>><a href="<?=$page?>"><?=$name?></a></li><?php
+}
+$nav = ob_get_clean(); /*
+?>
 <!--suppress HtmlUnknownTarget -->
 <li role="presentation" class="active"><a href="/">Startseite</a></li>
-<li role="presentation"><a href="/laden/">Aktuelles</a></li>
+<li role="presentation"><a href="/aktuell/">Aktuelles</a></li>
 <li role="presentation"><a href="/about/">Über uns</a></li>
 <li role="presentation"><a href="/verein/">Verein</a></li>
 <li role="presentation"><a href="/laden/">Laden</a></li>
 <li role="presentation"><a href="/kontakt/">Kontakt</a></li>
-<?php $nav = ob_get_clean(); ?>
+<?php */?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,12 +35,24 @@
     <meta name="description" content="Pax et Bonum. Eine Welt Laden e.V." />
     <meta name="keywords" content="Eine Welt Laden, Pax et bonum, Bischofswerda, Dresden, Kaffee, Fair Trade" />
     <meta name="author" content="Medienwerkstatt Bishofswerda" />
-    <title>Eine Welt Laden</title>
     <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/javascript.js" async></script>
 	<link rel="stylesheet" href="/styles/css/bootstrap.css" />
 	<link rel="stylesheet" href="/styles/css/stylesheet.css" />
+	<title><?=$constructor->title?></title>
+<?php
+
+if (!empty($constructor->cssfiles))
+	foreach ($constructor->cssfiles as $cssfile) {
+		echo "\t<link rel=\"stylesheet\" href=\"/styles/css/" . $cssfile . "\" />\r\n";
+	}
+if (!empty($constructor->jsfiles))
+	foreach ($constructor->jsfiles as $jsfile) {
+		echo "\t<script type=\"text/javascript\" src=\"/js/" . $jsfile . "\"></script>\r\n";
+	}
+	
+?>
 </head>
 <body>
     <div id="wrapper">
@@ -28,7 +60,7 @@
 			<div class="row">
 				<div class="navbar navbar-custom">
 					<div class="container-fluid">
-						<div class="col-xs-12 col-sm-4 col-md-3 logo hidden-xs">
+						<div class="logo hidden-xs">
 							<img src="/img/ewl-header-logo.png"/>
 						</div>
 						<div class="navbar-header">
@@ -73,15 +105,15 @@
 			</div>
 		</nav>
 		<main class="container">
-			<aside class="col-xs-12 col-sm-4 col-md-3" id="sidebar">
+			<aside id="sidebar">
 				<div id="floater">
 					<ul class="nav nav-pills nav-stacked">
 <?=$nav?>
 					</ul>
 				</div>
 			</aside>
-			<article class="col-xs-12 col-sm-8 col-md-9">
-				<h1>Eine Welt Laden e.V.</h1>
+			<article id="content">
+				<?php include "$constructor->modfile"; ?>
 				<div style="height: 2000px"></div>
 			</article>
 		</main>
