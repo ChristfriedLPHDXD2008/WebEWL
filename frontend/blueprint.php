@@ -1,3 +1,12 @@
+<?php ob_start(); ?>
+<!--suppress HtmlUnknownTarget -->
+<li role="presentation" class="active"><a href="/">Startseite</a></li>
+<li role="presentation"><a href="/laden/">Aktuelles</a></li>
+<li role="presentation"><a href="/about/">Über uns</a></li>
+<li role="presentation"><a href="/verein/">Verein</a></li>
+<li role="presentation"><a href="/laden/">Laden</a></li>
+<li role="presentation"><a href="/kontakt/">Kontakt</a></li>
+<?php $nav = ob_get_clean(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +18,7 @@
     <title>Eine Welt Laden</title>
     <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/javascript.js"></script>
 	<link rel="stylesheet" href="/styles/css/bootstrap.css" />
 	<link rel="stylesheet" href="/styles/css/stylesheet.css" />
 </head>
@@ -25,13 +35,22 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="/">
-								
+							<a class="navbar-brand hidden-sm hidden-md hidden-lg" href="/">
+								"Pax et bonum" Eine Welt Laden e.V.
 							</a>
 						</div>
 						<div class="collapse navbar-collapse" id="navbar-collapse">
+							<span class="hidden-sm hidden-md hidden-lg"><br><em>Navigation</em></span>
+							<ul class="nav navbar-nav navbar-left hidden-sm hidden-md hidden-lg">
+<?=$nav?>
+							</ul>
+							<hr class="hidden-sm hidden-md hidden-lg">
+							<span class="hidden-sm hidden-md hidden-lg"><em>Auf dieser Seite</em></span>
 							<ul class="nav navbar-nav navbar-right">
-								<li class="active"><a href="#">Link</a></li>
+								<li class="active"><a href="#">Mehr</a></li>
+								<li ><a href="#">Links</a></li>
+								<li ><a href="#">Auf dieser</a></li>
+								<li ><a href="#">Seite</a></li>
 								<!--
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -51,11 +70,16 @@
 			</div>
 		</nav>
 		<main class="container">
-			<aside class="col-xs-12 col-sm-4 col-md-3">
-				aside
+			<aside class="col-xs-12 col-sm-4 col-md-3" id="sidebar">
+				<div id="floater">
+					<ul class="nav nav-pills nav-stacked">
+<?=$nav?>
+					</ul>
+				</div>
 			</aside>
 			<article class="col-xs-12 col-sm-8 col-md-9">
-				MAIN CONTENT
+				<h1>Eine Welt Laden e.V.</h1>
+				<div style="height:2000px"></div>
 			</article>
 		</main>
     </div>
