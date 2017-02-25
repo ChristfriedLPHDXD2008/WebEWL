@@ -10,7 +10,7 @@ $(function(){
 	resizeAsideNav();
 });
 
-$(document).ready(function () {
+$(window).load(function () {
 	resizeAsideNav();
 });
 
