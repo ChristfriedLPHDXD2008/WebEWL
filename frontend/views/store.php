@@ -6,14 +6,13 @@
 		font-size: 12px;
 	}
 	#map {
-		
+		width: 100%;
+		height:400px;
+		border: 2px solid rgba(0,0,0,0.6);
 	}
 </style>
 
-<script src="//www.openlayers.org/api/OpenLayers.js"></script>
-<script src="//www.openstreetmap.org/openlayers/OpenStreetMap.js"></script>
-
-<div id="map" style="width:100%;height:400px;border: 2px solid rgba(0,0,0,0.6)"></div>
+<div id="map"></div>
 
 <script type="text/javascript">
 	var map;

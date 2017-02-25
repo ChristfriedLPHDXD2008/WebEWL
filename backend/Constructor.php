@@ -55,6 +55,8 @@ class Constructor
 					"Standort"		=> "#",
 					"Mitarbeiter"	=> "#"
 				]);
+				$this->jsfiles[]	= "OpenLayers.js";
+				$this->jsfiles[]	= "OpenStreetMap.js";
 				$this->viewfile		= "store.php";
 				break;
 			case "kontakt":
