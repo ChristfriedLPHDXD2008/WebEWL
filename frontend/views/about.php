@@ -1,9 +1,11 @@
-<h1>Wir über uns</h1>
-<hr>
-<a href="/content/25jahre_crop_wide.jpg" class="img-popup-trigger">
-	<img src="/content/25jahre_crop_wide.jpg" class="img-wide" id="image-1" />
-</a>
-<br>
+<section>
+	<h1>Wir über uns</h1>
+	<hr>
+	<a href="/content/25jahre_crop_wide.jpg" class="img-popup-trigger">
+		<img src="/content/25jahre_crop_wide.jpg" class="img-wide" id="image-1" />
+	</a>
+	<br>
+</section>
 <section>
 	<h3>Verein und Weltladen</h3>
 	<hr>

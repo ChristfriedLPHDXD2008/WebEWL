@@ -46,7 +46,7 @@ button, .btn {
   color: #1c290a; }
 
 article {
-  background-color: #23310c; }
+  background-color: #23310c !important; }
   article h1 {
     color: #ffd45b; }
 
