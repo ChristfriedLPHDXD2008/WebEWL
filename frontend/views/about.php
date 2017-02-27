@@ -52,6 +52,6 @@
 	</a>
 	<blockquote>
 		<p><br>Lesung mit Autor Anant Kumar, 2015</p>
-		<footer>Der deutsche Schriftsteller mit indischen Wurzeln schreibt über Erfahrungen in der Fremde</footer>
+		<footer>Der deutsche Schriftsteller mit indischen Wurzeln schreibt primär über Erfahrungen in der Fremde</footer>
 	</blockquote>
 </section>
