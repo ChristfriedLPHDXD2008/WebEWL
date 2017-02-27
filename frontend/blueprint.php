@@ -79,7 +79,7 @@ if (!empty($constructor->jsfiles))
 							<div class="nav-straight-open-keeper"></div>
 							<span class="hidden-sm hidden-md hidden-lg"><br><em>Navigation</em></span>
 							<ul class="nav navbar-nav navbar-left hidden-sm hidden-md hidden-lg">
-<?=$nav?>
+								<?=$nav?>
 							</ul>
 							<hr class="hidden-sm hidden-md hidden-lg">
 							<span class="hidden-sm hidden-md hidden-lg"><em>Auf dieser Seite</em></span>
@@ -87,9 +87,9 @@ if (!empty($constructor->jsfiles))
 								<?php
 								$i = 0;
 								foreach ($constructor->subs as $name => $link) { ?>
-									
+
 									<li<?=$i==0?$active:null?>><a href="<?=$link?>"><?=$name?></a></li>
-								<?php $i++; } ?>
+									<?php $i++; } ?>
 								<!--<li class="active"><a href="#">Mehr</a></li>-->
 								<!--
 								<li class="dropdown">

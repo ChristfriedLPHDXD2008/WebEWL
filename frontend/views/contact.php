@@ -15,23 +15,23 @@
 <table class="table">
 	<tr>
 		<td>Montag</td>
-		<td>09:00 bis 18:00 Uhr</td>
+		<td>14:00 bis 18:00 Uhr</td>
 	</tr>
 	<tr>
 		<td>Dienstag</td>
-		<td>09:00 bis 18:00 Uhr</td>
+		<td>14:00 bis 18:00 Uhr</td>
 	</tr>
 	<tr>
 		<td>Mittwoch</td>
-		<td>09:00 bis 18:00 Uhr</td>
+		<td>14:00 bis 18:00 Uhr</td>
 	</tr>
 	<tr>
 		<td>Donnerstag</td>
-		<td>09:00 bis 18:00 Uhr</td>
+		<td>14:00 bis 18:00 Uhr</td>
 	</tr>
 	<tr>
 		<td>Freitag</td>
-		<td>09:00 bis 18:00 Uhr</td>
+		<td>09:00 bis 13:00 Uhr</td>
 	</tr>
 	<tr><td></td><td></td></tr>
 </table>

@@ -1,13 +1,24 @@
 <h1>Unser Laden</h1>
 <hr>
+<p>
+	Unser Weltladen wird ehrenamtlich betrieben und arbeitet nach der Konvention der Weltläden:
+</p>
+<ul>
+	
+</ul>
+<p>
+	Wir bieten hochwertige okö-faire Lebensmittel und Handwerksprodukte aus aller Welt an, besonders von Kleinproduzenten.
+	<br>Individuelle Bestellungen sind (mit entsprechender Wartezeit) jederzeit möglich.
+</p>
+<br>
 <style type="text/css">
 	.olControlAttribution {
-		bottom: 3px!important;
+		bottom: 3px !important;
 		font-size: 12px;
 	}
 	#map {
 		width: 100%;
-		height:400px;
+		height: 400px;
 		border: 2px solid rgba(0,0,0,0.6);
 	}
 </style>

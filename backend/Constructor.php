@@ -37,6 +37,9 @@ class Constructor
 					"Ursprung"				=> "#",
 					"Anliegen des Vereins"	=> "#"
 				]);
+				$this->jsfiles[]	= "jquery.magnific-popup.min.js";
+				$this->jsfiles[]	= "views/about.js";
+				$this->cssfiles[]	= "magnific-popup.css";
 				$this->viewfile		= "about.php";
 				break;
 			case "verein":
