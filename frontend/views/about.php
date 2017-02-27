@@ -1,7 +1,7 @@
 <section>
 	<h1>Wir über uns</h1>
 	<hr>
-	<a href="/content/25jahre_crop_wide.jpg" class="img-popup-trigger">
+	<a href="/content/2015_25 Jahre EWL.jpg" class="img-popup-trigger">
 		<img src="/content/25jahre_crop_wide.jpg" class="img-wide" id="image-1" />
 	</a>
 	<br>
@@ -21,12 +21,11 @@
 	<p>
 		Aktivitäten rund um Verein und Laden werden von den Mitgliedern ehrenamtlich durchgeführt. Der Verein möchte mit seiner Arbeit einen kleinen Beitrag zu einer gerechteren Verteilung in der Welt leisten.
 	</p>
+	<br>
 </section>
-<br>
-<h3>Anliegen des Vereins</h3>
-<hr>
-<ul>
-	<li></li>
-	<li></li>
-	<li></li>
-</ul>
+<section>
+	<h3>Was ist Fairer Handel?</h3>
+	<p>
+		
+	</p>
+</section>
