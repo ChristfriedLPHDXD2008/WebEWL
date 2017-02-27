@@ -1,7 +1,7 @@
 <section>
 	<h1>Wir über uns</h1>
 	<hr>
-	<a href="/content/2015_25 Jahre EWL.jpg" class="img-popup-trigger">
+	<a href="/content/25jahre_size_Y1920.jpg" class="img-popup-trigger">
 		<img src="/content/25jahre_crop_wide.jpg" class="img-wide" id="image-1" />
 	</a>
 	<br>
