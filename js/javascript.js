@@ -30,7 +30,7 @@ $(window).scroll(function() {
 	// Set/remove active class
 	menuItems
 		.parent().removeClass("active")
-		.end().filter("[href='#"+id+"']").parent().addClass("active");
+		.end().filter("[href='#" + id + "']").parent().addClass("active");
 });
 
 function ScrollToElement(element) {
@@ -62,6 +62,8 @@ $(function (){
 	});
 
 	$("#right-nav").find("li a").click(function (e) {
+		if ($("#navbar-collapse.collapse").hasClass("in"))
+			$(".navbar-toggle").click();
 		ScrollToElement($($(this).attr("href")));
 		e.preventDefault();
 	});

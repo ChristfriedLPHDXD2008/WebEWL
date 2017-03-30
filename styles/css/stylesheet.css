@@ -227,7 +227,7 @@ aside#sidebar {
   position: relative !important;
   background: #1c290a;
   padding: 15px; }
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 991px) {
     aside#sidebar {
       -webkit-flex: 0 0 30%;
       -ms-flex: 0 0 30%;
