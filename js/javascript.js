@@ -1,20 +1,21 @@
 var lastId,
 	menuItems,
-	scrollItems;
+	scrollItems,
+	update = true;
 
 $(function () {
 	console.log("func");
 	menuItems = $("#right-nav").find("li a");
 	scrollItems = menuItems.map(function(){
 		var item = $($(this).attr("href"));
-		console.log($(this).attr("href"));
 		if (item.length) { return item; }
 	});
 });
 
 $(window).scroll(function() {
+	if (update === false) return;
 	//noinspection JSValidateTypes
-	var fromTop = $(window).scrollTop() + 200,
+	var fromTop = $(window).scrollTop() + 250,
 		cur = scrollItems.map(function () {
 			if ($(this).offset().top < fromTop)
 				return this;
@@ -24,25 +25,28 @@ $(window).scroll(function() {
 	else cur = cur[cur.length - 1];
 	var id = cur && cur.length ? cur[0].id : "";
 
-	if (lastId !== id) {
-		lastId = id;
-		// Set/remove active class
-		menuItems
-			.parent().removeClass("active")
-			.end().filter("[href='#"+id+"']").parent().addClass("active");
-	}
+	if (lastId === id) return;
+	lastId = id;
+	// Set/remove active class
+	menuItems
+		.parent().removeClass("active")
+		.end().filter("[href='#"+id+"']").parent().addClass("active");
 });
 
 function ScrollToElement(element) {
+	update = false;
 	//noinspection JSValidateTypes
 	var time = 0,
-		topOffset = element.offset().top - 70,
+		topOffset = element.offset().top - 80,
 		scrollTop = $(window).scrollTop();
 
 	if (topOffset > scrollTop) time = topOffset - scrollTop;
 	else time = scrollTop - topOffset;
 
-	$('html').animate({ scrollTop: topOffset }, time);
+	$('html').animate({ scrollTop: topOffset }, time, function () {
+		update = true;
+		$(window).scroll();
+	});
 }
 
 $(function (){
@@ -61,4 +65,6 @@ $(function (){
 		ScrollToElement($($(this).attr("href")));
 		e.preventDefault();
 	});
+
+	$(window).scroll();
 });

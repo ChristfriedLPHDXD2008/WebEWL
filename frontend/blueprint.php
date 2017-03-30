@@ -109,7 +109,7 @@ if (!empty($constructor->jsfiles))
 		</aside>
 		<article id="content">
 			<?php include "$constructor->modfile"; ?>
-			<div style="height: 130px;"></div>
+			<div style="height: 205px;"></div>
 		</article>
 	</main>
 </div>
