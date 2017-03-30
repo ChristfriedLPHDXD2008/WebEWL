@@ -34,8 +34,9 @@ class Constructor
 				break;
 			case "about":
 				$this->subs			=	array_merge($this->subs, [
-					"Ursprung"				=> "#",
-					"Anliegen des Vereins"	=> "#"
+					"Verein und Weltladen"	=> "#verein-und-weltladen",
+					"Fairer Handel"			=> "#was-ist-fairer-handel",
+					"Was kann ich tun?"		=> "#was-kann-ich-tun"
 				]);
 				$this->jsfiles[]	= "jquery.magnific-popup.min.js";
 				$this->jsfiles[]	= "views/about.js";

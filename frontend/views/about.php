@@ -5,7 +5,7 @@
 	</a>
 	<hr>
 </section>
-<section>
+<section id="verein-und-weltladen">
 	<h3>Verein und Weltladen</h3>
 	<p>
 		Im Dezember 1990 gründeten Mitglieder der Franziskusgemeinschaft Leutwitz zusammen mit Freunden und Bekannten den Verein "Pax et bonum" - Eine Welt Laden e.V.
@@ -21,7 +21,7 @@
 	</p>
 	<hr>
 </section>
-<section>
+<section id="was-ist-fairer-handel">
 	<h3>Was ist Fairer Handel?</h3>
 	<p>
 		Anfang der 1970er Jahre ist aus der Kritik an ungerechten Welthandelsstrukturen die "Aktion Dritte-Welt-Handel" entstanden. Die heute ca. 800 deutschen Weltläden verstehen sich als Teil dieser Bewegung.
@@ -39,7 +39,7 @@
 	</ul>
 	<hr>
 </section>
-<section>
+<section id="was-kann-ich-tun">
 	<h3><i class="glyphicon glyphicon-arrow-right"></i> Was kann ich tun?</h3>
 	<p>
 		Sie als Verbraucher können mit dem Einkaufskorb etwas gegen Mangelernährung, Armut und Ungerechtigkeit im Welthandel tun und leisten außerdem einen Beitrag zum Umweltschutz.

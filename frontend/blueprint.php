@@ -30,11 +30,6 @@ $nav = ob_get_clean();
     <meta name="description" content="Pax et Bonum. Eine Welt Laden e.V." />
     <meta name="keywords" content="Eine Welt Laden, Pax et bonum, Bischofswerda, Dresden, Kaffee, Fair Trade" />
     <meta name="author" content="Medienwerkstatt Bishofswerda" />
-    <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/javascript.js" async></script>
-	<link rel="stylesheet" href="/styles/css/bootstrap.css" />
-	<link rel="stylesheet" href="/styles/css/stylesheet.css" />
 	<title><?=$constructor->title?></title>
 <?php
 
@@ -66,7 +61,7 @@ if (!empty($constructor->jsfiles))
 							<span class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand hidden-sm hidden-md hidden-lg" href="/">
-							"Pax et bonum" - Eine Welt Laden e.V.
+							<span class="headtitle">"Pax et bonum" - </span><span class="subtitle">Eine Welt Laden e.V.</span>
 						</a>
 					</div>
 					<div class="collapse navbar-collapse" id="navbar-collapse">
@@ -77,7 +72,7 @@ if (!empty($constructor->jsfiles))
 						</ul>
 						<hr class="hidden-sm hidden-md hidden-lg">
 						<span class="hidden-sm hidden-md hidden-lg"><em>Auf dieser Seite</em></span>
-						<ul class="nav navbar-nav navbar-right">
+						<ul id="right-nav" class="nav navbar-nav navbar-right">
 							<?php
 							$i = 0;
 							foreach ($constructor->subs as $name => $link) { ?>
@@ -98,6 +93,7 @@ if (!empty($constructor->jsfiles))
 							</li>
 							-->
 						</ul>
+						<div class="hidden-sm hidden-md hidden-lg"><span style="opacity: 0; visibility: hidden">-</span></div>
 					</div><!-- /.navbar-collapse -->
 				</div><!-- /.container-fluid -->
 			</div>
