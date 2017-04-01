@@ -288,7 +288,7 @@ aside#sidebar {
         aside#sidebar #floater .nav-pills li a {
           color: #1a1a1a;
           transition: 0.2s ease;
-          padding: 12px 15px;
+          padding: 10px 15px;
           border-radius: 8px; }
           aside#sidebar #floater .nav-pills li a:hover, aside#sidebar #floater .nav-pills li a:focus {
             background: #ffdf84;
