@@ -134,16 +134,16 @@
 					</a>
 				</li>
 				<li class="treeview">
-					<a href="#">
-						<i class="fa fa-paragraph"></i>
+					<a href="//">
+						<i class="fa fa-thumb-tack"></i>
 						<span>Posts</span>
 						<span class="pull-right-container">
 							<i class="fa fa-angle-left pull-right"></i>
 						</span>
 					</a>
 					<ul class="treeview-menu">
-						<li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Verfassen</a></li>
-						<li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Bearbeiten</a></li>
+						<li><a href="pages/charts/chartjs.html">Verfassen</a></li>
+						<li><a href="pages/charts/morris.html">Bearbeiten</a></li>
 					</ul>
 				</li>
 				<li class="treeview">

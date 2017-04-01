@@ -10,6 +10,6 @@ define("TITLE",			"Pax et Bonum - Eine Welt Laden e.V.");
 define("CSS_Bootstrap",	"bootstrap.css");
 define("CSS_styles",	"stylesheet.css");
 
-define("JS_jQuery",		"jquery-3.1.1.min.js");
+define("JS_jQuery",		"jquery-3.2.0.min.js");
 define("JS_Bootstrap",	"bootstrap.min.js");
 define("JS_javascript",	"javascript.js");
