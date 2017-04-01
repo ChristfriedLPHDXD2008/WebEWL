@@ -37,6 +37,7 @@ if (!empty($constructor->cssfiles))
 	foreach ($constructor->cssfiles as $cssfile) {
 		echo "\t<link rel=\"stylesheet\" href=\"/styles/css/" . $cssfile . "\" />\r\n";
 	}
+	
 if (!empty($constructor->jsfiles))
 	foreach ($constructor->jsfiles as $jsfile) {
 		echo "\t<script type=\"text/javascript\" src=\"/js/" . $jsfile . "\"></script>\r\n";
