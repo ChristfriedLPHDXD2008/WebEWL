@@ -22,9 +22,9 @@ class Constructor
 		switch (@$_GET[0]) {
 			default:
 				$this->subs			=	array_merge($this->subs, [
-					"Pax et bonum"	=> "#",
-					"Fair Trade"	=> "#",
-					"Impressum"		=> "#"
+					"Pax et bonum"	=> "#wortschnecke",
+					"Fair Trade"	=> "/laden#fair-trade",
+					"Impressum"		=> "/impressum"
 				]);
 				$this->cssfiles[]	= "start.css";
 				$this->viewfile		= "start.php";
@@ -45,19 +45,19 @@ class Constructor
 				break;
 			case "verein":
 				$this->subs			=	array_merge($this->subs, [
-					"Vereinsleben"		=> "#",
-					"Veranstaltungen"	=> "#",
-					"Bildungsarbeit"	=> "#"
+					"Vereinsleben"		=> "#vereinsleben",
+					"Veranstaltungen"	=> "#veranstaltungen",
+					"Bildungsarbeit"	=> "#bildungsarbeit"
 				]);
 				$this->viewfile		= "verein.php";
 				break;
 			case "laden":
 				$this->subs			=	array_merge($this->subs, [
-					"Sortiment"		=> "#",
-					"Fair Trade"	=> "#",
-					"Bestellung"	=> "#",
-					"Standort"		=> "#",
-					"Mitarbeiter"	=> "#"
+					"Sortiment"		=> "#sortiment",
+					"Fair Trade"	=> "#fair-trade",
+					"Bestellung"	=> "#bestellungen",
+					"Standort"		=> "#standort",
+					"Mitarbeiter"	=> "#mitarbeiter"
 				]);
 				$this->jsfiles[]	= "OpenLayers.js";
 				$this->jsfiles[]	= "OpenStreetMap.js";
@@ -65,12 +65,15 @@ class Constructor
 				break;
 			case "kontakt":
 				$this->subs			=	array_merge($this->subs, [
-					"Kontakt"				=> "#",
-					"Öffnungszeiten"		=> "#",
-					"Anfahrt"				=> "#",
-					"Schreiben Sie uns an"	=> "#"
+					"Kontakt"				=> "#kontakt",
+					"Öffnungszeiten"		=> "#öffnungszeiten",
+					"Anfahrt"				=> "#anfahrt",
+					"Schreiben Sie uns an"	=> "#anschreiben"
 				]);
 				$this->viewfile		= "contact.php";
+				break;
+			case "impressum":
+				$this->viewfile		= "impress.php";
 				break;
 		}
 		

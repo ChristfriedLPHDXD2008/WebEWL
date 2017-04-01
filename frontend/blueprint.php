@@ -105,6 +105,7 @@ if (!empty($constructor->jsfiles))
 			<div id="floater">
 				<ul class="nav nav-pills nav-stacked">
 <?=$nav?>
+					<li role="presentation"><a href="/admin">admin</a></li>
 				</ul>
 			</div>
 		</aside>

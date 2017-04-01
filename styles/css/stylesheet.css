@@ -254,21 +254,7 @@ aside#sidebar {
       max-height: calc(100vh - 225px);
       overflow-y: auto;
       width: auto;
-      padding: 0 5px;
-      margin: 15px 0;
-      background: #ffd45b;
-      border-radius: 8px;
-      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd45b+0,ffdb87+100 */
-      background: #ffd45b;
-      /* Old browsers */
-      background: -moz-linear-gradient(left, #ffd45b 0%, #ffdb87 100%);
-      /* FF3.6-15 */
-      background: -webkit-linear-gradient(left, #ffd45b 0%, #ffdb87 100%);
-      /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to right, #ffd45b 0%, #ffdb87 100%);
-      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd45b', endColorstr='#ffdb87',GradientType=1 );
-      /* IE6-9 */ }
+      margin: 15px 0; }
       @media only screen and (min-width: 1200px) {
         aside#sidebar #floater .nav-pills {
           width: 262.5px; } }
@@ -279,39 +265,41 @@ aside#sidebar {
         aside#sidebar #floater .nav-pills {
           width: 157.5px; } }
       aside#sidebar #floater .nav-pills li {
-        margin: 0;
+        margin: 15px 0;
         font-size: 18px;
-        padding: 0; }
+        padding: 0;
+        border-radius: 8px;
+        background: #ffd45b; }
         aside#sidebar #floater .nav-pills li:not(:last-child) {
           border-bottom: 1px solid #b28300; }
         aside#sidebar #floater .nav-pills li.active a {
           color: #1c290a;
-          letter-spacing: 3px;
+          font-weight: bold;
           background: #ffecb7;
-          /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd45b+0,ffdf84+6,ffdf84+100&0+0,1+2,1+62,0+100 */
-          background: -moz-linear-gradient(left, rgba(255, 212, 91, 0) 0%, #ffd869 2%, #ffdf84 6%, #ffdf84 62%, rgba(255, 223, 132, 0) 100%);
+          /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffdf84+6,ffdf84+100&0.6+0,1+2,1+62,0+100 */
+          background: -moz-linear-gradient(left, rgba(255, 223, 132, 0.6) 0%, #ffdf84 2%, #ffdf84 6%, #ffdf84 62%, rgba(255, 223, 132, 0) 100%);
           /* FF3.6-15 */
-          background: -webkit-linear-gradient(left, rgba(255, 212, 91, 0) 0%, #ffd869 2%, #ffdf84 6%, #ffdf84 62%, rgba(255, 223, 132, 0) 100%);
+          background: -webkit-linear-gradient(left, rgba(255, 223, 132, 0.6) 0%, #ffdf84 2%, #ffdf84 6%, #ffdf84 62%, rgba(255, 223, 132, 0) 100%);
           /* Chrome10-25,Safari5.1-6 */
-          background: linear-gradient(to right, rgba(255, 212, 91, 0) 0%, #ffd869 2%, #ffdf84 6%, #ffdf84 62%, rgba(255, 223, 132, 0) 100%);
+          background: linear-gradient(to right, rgba(255, 223, 132, 0.6) 0%, #ffdf84 2%, #ffdf84 6%, #ffdf84 62%, rgba(255, 223, 132, 0) 100%);
           /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffd45b', endColorstr='#00ffdf84',GradientType=1 );
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffdf84', endColorstr='#00ffdf84',GradientType=1 );
           /* IE6-9 */ }
         aside#sidebar #floater .nav-pills li a {
           color: #1a1a1a;
           transition: 0.2s ease;
-          border-radius: 0;
-          padding: 12px 12px; }
+          padding: 12px 15px;
+          border-radius: 8px; }
           aside#sidebar #floater .nav-pills li a:hover, aside#sidebar #floater .nav-pills li a:focus {
             background: #ffdf84;
-            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd45b+0,ffe4a3+6,ffdf84+100&0+0,1+2,1+78,0+100 */
-            background: -moz-linear-gradient(left, rgba(255, 212, 91, 0) 0%, #ffd973 2%, #ffe4a3 6%, #ffe08b 78%, rgba(255, 223, 132, 0) 100%);
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffe4a3+6,ffdf84+100&0.7+0,1+2,1+42,1+67,0+100 */
+            background: -moz-linear-gradient(left, rgba(255, 228, 163, 0.7) 0%, #ffe4a3 2%, #ffe4a3 6%, #ffe297 42%, #ffe18f 67%, rgba(255, 223, 132, 0) 100%);
             /* FF3.6-15 */
-            background: -webkit-linear-gradient(left, rgba(255, 212, 91, 0) 0%, #ffd973 2%, #ffe4a3 6%, #ffe08b 78%, rgba(255, 223, 132, 0) 100%);
+            background: -webkit-linear-gradient(left, rgba(255, 228, 163, 0.7) 0%, #ffe4a3 2%, #ffe4a3 6%, #ffe297 42%, #ffe18f 67%, rgba(255, 223, 132, 0) 100%);
             /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to right, rgba(255, 212, 91, 0) 0%, #ffd973 2%, #ffe4a3 6%, #ffe08b 78%, rgba(255, 223, 132, 0) 100%);
+            background: linear-gradient(to right, rgba(255, 228, 163, 0.7) 0%, #ffe4a3 2%, #ffe4a3 6%, #ffe297 42%, #ffe18f 67%, rgba(255, 223, 132, 0) 100%);
             /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffd45b', endColorstr='#00ffdf84',GradientType=1 );
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3ffe4a3', endColorstr='#00ffdf84',GradientType=1 );
             /* IE6-9 */ }
     @media only screen and (min-width: 816px) and (max-width: 992px) {
       aside#sidebar #floater {
