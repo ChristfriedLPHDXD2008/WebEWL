@@ -23,7 +23,7 @@ $days = $ot->getOpeningTimes();
 						<td class="short">von</td>
 						<td class="time">
 							<div>
-								<a href="//" onclick="editTime('d<?=$day["DID"]?>1');" id="d<?=$day["DID"]?>1" data-day="<?=$day["day"]?> von">
+								<a href="#" onclick="editTime('d<?=$day["DID"]?>1'); return false;" id="d<?=$day["DID"]?>1" data-day="<?=$day["day"]?> von">
 									<?=date("G:i", strtotime($day["opening"]))?>
 								</a>
 							</div>
@@ -31,18 +31,18 @@ $days = $ot->getOpeningTimes();
 						<td class="short">bis</td>
 						<td class="time">
 							<div>
-								<a href="//" onclick="editTime('d<?=$day["DID"]?>2');" id="d<?=$day["DID"]?>2" data-day="<?=$day["day"]?> bis">
+								<a href="#" onclick="editTime('d<?=$day["DID"]?>2'); return false;" id="d<?=$day["DID"]?>2" data-day="<?=$day["day"]?> bis">
 								<?=date("G:i", strtotime($day["closing"]))?>
 								</a>
 							</div>
 						</td>
 						<td class="short">Uhr</td>
 						<td class="text-center">
-							<a href="//"><span class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="left" title="Manuelle Eingabe"></span></a>
+							<a href="#"><span class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="left" title="Manuelle Eingabe"></span></a>
 							&nbsp;
-							<a href="//"><span class="glyphicon glyphicon-eye-close" data-toggle="tooltip" data-placement="left" title="Tag für Kunden ausblenden"></span></a>
+							<a href="#"><span class="glyphicon glyphicon-eye-close" data-toggle="tooltip" data-placement="left" title="Tag für Kunden ausblenden"></span></a>
 							&nbsp;
-							<a href="//" onclick="setZero('d<?=$day["DID"]?>1', 'd<?=$day["DID"]?>2')"><span class="glyphicon glyphicon-off" data-toggle="tooltip" data-placement="left" title="An diesem Tag geschlossen"></span></a>
+							<a href="#" onclick="setZero('d<?=$day["DID"]?>1', 'd<?=$day["DID"]?>2'); return false;"><span class="glyphicon glyphicon-off" data-toggle="tooltip" data-placement="left" title="An diesem Tag geschlossen"></span></a>
 						</td>
 					</tr>
 				<?php } ?>
