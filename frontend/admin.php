@@ -31,10 +31,10 @@ $constr = Constructor::getInstance();
 		</div>
 	</div>
 	<aside class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-		<div class="panel panel-default">
-			<div class="panel-heading">Allgemein</div>
-			<div class="panel-body">
-				<nav>
+		<nav>
+			<div class="panel panel-default">
+				<div class="panel-heading">Allgemein</div>
+				<div class="panel-body">
 					<ul class="nav nav-pills nav-stacked">
 						<li role="presentation">
 							<a href="/admin/dashboard">Dashboard</a>
@@ -46,13 +46,11 @@ $constr = Constructor::getInstance();
 							<a href="/admin/settings">Einstellungen</a>
 						</li>
 					</ul>
-				</nav>
+				</div>
 			</div>
-		</div>
-		<div class="panel panel-default">
-			<div class="panel-heading">Posts</div>
-			<div class="panel-body">
-				<nav>
+			<div class="panel panel-default">
+				<div class="panel-heading">Posts</div>
+				<div class="panel-body">
 					<ul class="nav nav-pills nav-stacked">
 						<li role="presentation">
 							<a href="/admin/posts/verfassen">Verfassen</a>
@@ -61,13 +59,11 @@ $constr = Constructor::getInstance();
 							<a href="/admin/posts">Verwalten</a>
 						</li>
 					</ul>
-				</nav>
+				</div>
 			</div>
-		</div>
-		<div class="panel panel-default">
-			<div class="panel-heading">Benutzerkonten</div>
-			<div class="panel-body">
-				<nav>
+			<div class="panel panel-default">
+				<div class="panel-heading">Benutzerkonten</div>
+				<div class="panel-body">
 					<ul class="nav nav-pills nav-stacked">
 						<li role="presentation">
 							<a href="/admin/benutzer/anlegen">Anlegen</a>
@@ -76,24 +72,34 @@ $constr = Constructor::getInstance();
 							<a href="/admin/benutzer">Verwalten</a>
 						</li>
 					</ul>
-				</nav>
+				</div>
 			</div>
-		</div>
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<nav>
+			<div class="panel panel-default">
+				<div class="panel-body">
 					<ul class="nav nav-pills nav-stacked">
 						<li role="presentation">
 							<a href="/admin/benutzer/ich">Mein Account</a>
 						</li>
 					</ul>
-				</nav>
+				</div>
 			</div>
-		</div>
+		</nav>
 	</aside>
 	<section class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+		<?php if (!empty($constr->headline)) { ?>
+			
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="panel panel-default">
+					<div class="panel-body"><h1 class="headline"><?=$constr->headline?></h1></div>
+				</div>
+			</div>
+		</div>
+		<?php } ?>
+		
 		<div class="row">
 			<?php include_once __FRONTEND__ . "/admin/" . "$constr->viewfile"; ?>
+			
 		</div>
 	</section>
 </main>

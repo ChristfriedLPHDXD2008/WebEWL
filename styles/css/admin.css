@@ -138,13 +138,10 @@ main aside {
     padding: 8px 15px 5px; }
   main .toggle-aside .panel-body,
   main aside .panel-body {
-    padding: 0; }
-    main .toggle-aside .panel-body nav,
-    main aside .panel-body nav {
-      padding: 10px 0; }
-      main .toggle-aside .panel-body nav .nav.nav-pills.nav-stacked a,
-      main aside .panel-body nav .nav.nav-pills.nav-stacked a {
-        padding: 5px 15px; }
+    padding: 10px 0; }
+    main .toggle-aside .panel-body .nav.nav-pills.nav-stacked a,
+    main aside .panel-body .nav.nav-pills.nav-stacked a {
+      padding: 5px 15px; }
   @media only screen and (max-width: 816px) {
     main .toggle-aside:not(.toggle-aside),
     main aside:not(.toggle-aside) {
@@ -155,13 +152,73 @@ main aside {
   main .toggle-aside .glyphicon,
   main aside .glyphicon {
     font-size: 0.82em; }
+  main .toggle-aside .nav-pills > li.active > a,
+  main aside .nav-pills > li.active > a {
+    color: #337ab7;
+    background: #eff5fa; }
+    main .toggle-aside .nav-pills > li.active > a:hover,
+    main aside .nav-pills > li.active > a:hover {
+      color: #337ab7;
+      background: #eff5fa; }
+  main .toggle-aside .nav-pills > li > a,
+  main aside .nav-pills > li > a {
+    border: 0 solid transparent;
+    border-radius: 0; }
 main aside div.panel:not(.no-shadow),
 main .toggle-aside div.panel:not(.no-shadow),
 main section div.row div.panel:not(.no-shadow) {
   -webkit-box-shadow: 0 4px 10px 0px rgba(15, 15, 15, 0.3);
   -moz-box-shadow: 0 4px 10px 0px rgba(15, 15, 15, 0.3);
   box-shadow: 0 4px 10px 0px rgba(15, 15, 15, 0.3); }
-main section {
-  padding-left: 0 !important; }
+@media only screen and (min-width: 817px) {
+  main section {
+    padding-left: 0 !important; } }
+main section .headline {
+  font-family: "Monserrat", Helvetica, sans-serif;
+  margin: 10px 5px;
+  font-size: 1.7em; }
+main .btn {
+  font-family: "Monserrat", Helvetica, sans-serif;
+  font-size: 0.9em; }
+
+#opening-times .panel-body {
+  overflow-y: auto; }
+#opening-times tr > td.time {
+  text-align: right;
+  padding-right: 4%; }
+  #opening-times tr > td.time > div {
+    display: inline-block;
+    min-width: 70px; }
+#opening-times .modal {
+  text-align: center; }
+  #opening-times .modal .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle; }
+  #opening-times .modal #modalBody .input-box {
+    display: block;
+    position: relative;
+    white-space: nowrap; }
+    #opening-times .modal #modalBody .input-box input, #opening-times .modal #modalBody .input-box label {
+      margin: 0;
+      box-sizing: border-box;
+      display: inline-block;
+      width: 45%; }
+      #opening-times .modal #modalBody .input-box input#inpHour, #opening-times .modal #modalBody .input-box label#inpHour {
+        text-align: right; }
+      #opening-times .modal #modalBody .input-box input[for=inpHour], #opening-times .modal #modalBody .input-box label[for=inpHour] {
+        text-align: right; }
+    #opening-times .modal #modalBody .input-box .divider {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      width: 10%;
+      text-align: center; }
+@media screen and (min-width: 768px) {
+  #opening-times .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%; } }
 
 /*# sourceMappingURL=admin.css.map */

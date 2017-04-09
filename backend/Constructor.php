@@ -6,6 +6,7 @@ class Constructor
 	public $error;
 	public $view;
 	public $title;
+	public $headline;
 	public $subs		= [];
 	public $modfile;
 	public $viewfile	= '.default';
@@ -22,7 +23,34 @@ class Constructor
 		if (@$_GET[0] == "admin") switch (@$_GET[1]) {
 			default:
 			case "dashboard":
+				$this->headline		= "Dashboard";
 				$this->viewfile		= "dashboard.php";
+				break;
+			case "öffnungszeiten":
+				$this->headline		= "Öffnungszeiten";
+				$this->viewfile		= "openingtimes.php";
+				break;
+			case "settings":
+				$this->headline		= "Einstellungen";
+				$this->viewfile		= "settings.php";
+				break;
+			case "posts":
+				$this->headline		= "Posts Verwalten";
+				if (@$_GET[2] == "verfassen")
+					$this->headline	= "Neuen Post Verfassen";
+				if (@$_GET[2] == "edit")
+					$this->headline	= "Post Bearbeiten";
+				$this->viewfile		= "posts.php";
+				break;
+			case "benutzer":
+				$this->headline		= "Benutzer Verwalten";
+				if (@$_GET[2] == "anlegen")
+					$this->headline	= "Neuen Benutzer Anlegen";
+				if (@$_GET[2] == "bearbeiten")
+					$this->headline	= "Benutzerkonto Bearbeiten";
+				if (@$_GET[2] == "ich")
+					$this->headline	= "Mein Account";
+				$this->viewfile		= "users.php";
 				break;
 		}
 		else switch (@$_GET[0]) {

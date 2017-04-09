@@ -356,9 +356,12 @@ article {
   display: block;
   background-color: #fff;
   padding: 30px; }
-  article h2, article h3, article h4, article h5, article h6 {
+  article h1, article h2, article h3, article h4, article h5, article h6 {
     font-family: "Monserrat", Helvetica, sans-serif;
     text-transform: uppercase; }
+  article h1 {
+    text-transform: none;
+    margin-bottom: 30px; }
   @media only screen and (max-width: 992px) {
     article {
       -webkit-flex: 1 1 100%;
