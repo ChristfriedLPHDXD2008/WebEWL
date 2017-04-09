@@ -4,7 +4,7 @@ var lastId,
 	update = true;
 
 $(function () {
-	console.log("func");
+	console.log("javascript loading");
 	menuItems = $("#right-nav").find("li a");
 	scrollItems = menuItems.map(function(){
 		var item = $($(this).attr("href"));
@@ -69,4 +69,6 @@ $(function (){
 	});
 
 	$(window).scroll();
+
+	console.log("javascript loaded");
 });

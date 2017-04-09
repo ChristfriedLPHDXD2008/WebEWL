@@ -19,9 +19,6 @@ RewriteCond %{HTTP_HOST} !localhost
 RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-#RewriteRule (.*) /admin/index.php [L,QSA]
-
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_URI} !^/admin[/]? [NC]
-RewriteCond %{REQUEST_URI} ^/([^/]*)?/? [NC]
-RewriteRule (.*) index.php?0=%1 [L,QSA]
+RewriteCond %{REQUEST_URI} ^/([^/]*)?/?([^/]*)?/?([^/]*)?/?([^/]*)? [NC]
+RewriteRule (.*) index.php?0=%1&1=%2&3=%4 [L,QSA]

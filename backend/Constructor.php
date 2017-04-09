@@ -19,7 +19,13 @@ class Constructor
 	
 	public function build() {
 		
-		switch (@$_GET[0]) {
+		if (@$_GET[0] == "admin") switch (@$_GET[1]) {
+			default:
+			case "dashboard":
+				$this->viewfile		= "dashboard.php";
+				break;
+		}
+		else switch (@$_GET[0]) {
 			default:
 				$this->subs			=	array_merge($this->subs, [
 					"Pax et bonum"	=> "#wortschnecke",
@@ -79,7 +85,7 @@ class Constructor
 		
 		switch ($this->view)
 		{
-			case "view" :
+			case "view":
 				$this->title	= $this->title ?? TITLE;
 				$this->modfile	= __FRONTEND__ . "/view.php";
 				$this->cssfiles = array_merge(
@@ -91,6 +97,34 @@ class Constructor
 					[JS_jQuery, JS_Bootstrap],
 					$this->jsfiles,
 					[JS_javascript]
+				);
+				break;
+			case "login":
+				$this->title	= $this->title ?? TITLE_ADMIN;
+				$this->modfile	= __FRONTEND__ . "/login.php";
+				$this->cssfiles	= array_merge(
+					[CSS_Bootstrap],
+					$this->cssfiles,
+					[CSS_login]
+				);
+				$this->jsfiles	= array_merge(
+					[JS_jQuery, JS_Bootstrap],
+					$this->jsfiles,
+					[JS_login]
+				);
+				break;
+			case "admin":
+				$this->title	= $this->title == TITLE_ADMIN;
+				$this->modfile	= __FRONTEND__ . "/admin.php";
+				$this->cssfiles	= array_merge(
+					[CSS_Bootstrap],
+					$this->cssfiles,
+					[CSS_admin]
+				);
+				$this->jsfiles	= array_merge(
+					[JS_jQuery, JS_Bootstrap],
+					$this->jsfiles,
+					[JS_admin]
 				);
 				break;
 			default :
