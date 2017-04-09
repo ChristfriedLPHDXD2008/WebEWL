@@ -37,7 +37,7 @@ function ScrollToElement(element) {
 	update = false;
 	//noinspection JSValidateTypes
 	var time = 0,
-		topOffset = element.offset().top - 80,
+		topOffset = (element.offset()).top - 80,
 		scrollTop = $(window).scrollTop();
 
 	if (topOffset > scrollTop) time = topOffset - scrollTop;
