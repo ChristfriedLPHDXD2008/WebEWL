@@ -29,6 +29,7 @@ define("CSS_login",		"login.css");
 define("CSS_admin",		"admin.css");
 define("JS_jQuery",		"jquery-3.2.0.min.js");
 define("JS_Bootstrap",	"bootstrap.min.js");
+define("JS_fngrprnt",	"fingerprint2.min.js");
 define("JS_javascript",	"javascript.js");
 define("JS_login",		"login.js");
 define("JS_admin",		"admin.js");

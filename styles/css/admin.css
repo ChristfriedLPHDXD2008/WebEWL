@@ -57,6 +57,16 @@ button, .btn {
   font-weight: 400; }
 @font-face {
   font-family: Monserrat;
+  src: url("/fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600; }
+@font-face {
+  font-family: Monserrat;
+  src: url("/fonts/Montserrat-SemiBoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 600; }
+@font-face {
+  font-family: Monserrat;
   src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700; }
@@ -151,5 +161,7 @@ main section div.row div.panel:not(.no-shadow) {
   -webkit-box-shadow: 0 4px 10px 0px rgba(15, 15, 15, 0.3);
   -moz-box-shadow: 0 4px 10px 0px rgba(15, 15, 15, 0.3);
   box-shadow: 0 4px 10px 0px rgba(15, 15, 15, 0.3); }
+main section {
+  padding-left: 0 !important; }
 
 /*# sourceMappingURL=admin.css.map */

@@ -108,7 +108,7 @@ class Constructor
 					[CSS_login]
 				);
 				$this->jsfiles	= array_merge(
-					[JS_jQuery, JS_Bootstrap],
+					[JS_jQuery, JS_Bootstrap, JS_fngrprnt],
 					$this->jsfiles,
 					[JS_login]
 				);

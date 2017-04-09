@@ -45,6 +45,36 @@ button, .btn {
 .text-primary {
   color: #1c290a; }
 
+@font-face {
+  font-family: Monserrat;
+  src: url("/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400; }
+@font-face {
+  font-family: Monserrat;
+  src: url("/fonts/Montserrat-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400; }
+@font-face {
+  font-family: Monserrat;
+  src: url("/fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600; }
+@font-face {
+  font-family: Monserrat;
+  src: url("/fonts/Montserrat-SemiBoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 600; }
+@font-face {
+  font-family: Monserrat;
+  src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700; }
+@font-face {
+  font-family: Monserrat;
+  src: url("/fonts/Montserrat-BoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 700; }
 html {
   margin: 0;
   padding: 0;
@@ -227,7 +257,8 @@ aside#sidebar {
   order: 0;
   position: relative !important;
   background: #1c290a;
-  padding: 15px; }
+  padding: 15px;
+  font-family: "Monserrat", Helvetica, sans-serif; }
   @media only screen and (max-width: 991px) {
     aside#sidebar {
       -webkit-flex: 0 0 30%;
@@ -274,7 +305,7 @@ aside#sidebar {
           border-bottom: 1px solid #b28300; }
         aside#sidebar #floater .nav-pills li.active a {
           color: #1c290a;
-          font-weight: bold;
+          font-weight: 600;
           background: #ffecb7;
           /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffdf84+6,ffdf84+100&0.6+0,1+2,1+62,0+100 */
           background: -moz-linear-gradient(left, rgba(255, 223, 132, 0.6) 0%, #ffdf84 2%, #ffdf84 6%, #ffdf84 62%, rgba(255, 223, 132, 0) 100%);
@@ -325,6 +356,9 @@ article {
   display: block;
   background-color: #fff;
   padding: 30px; }
+  article h2, article h3, article h4, article h5, article h6 {
+    font-family: "Monserrat", Helvetica, sans-serif;
+    text-transform: uppercase; }
   @media only screen and (max-width: 992px) {
     article {
       -webkit-flex: 1 1 100%;

@@ -75,7 +75,7 @@ body {
     background-color: #ffefc1;
     cursor: default; }
 
-.form-group label {
+label {
   font-weight: normal; }
 
 .btn-login {
