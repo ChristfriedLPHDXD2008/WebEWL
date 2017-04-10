@@ -68,7 +68,7 @@ $days = $optim->getOpeningTimes();
 			</table>
 			<div class="status-bar">
 				<button type="button" class="btn btn-danger" onclick="submitChanges();">Speichern</button>
-				<span id="status"><span>Daten gespeichert</span></span>
+				<span id="status"></span>
 			</div>
 		</div>
 	</div>
