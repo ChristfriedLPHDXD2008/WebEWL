@@ -1,5 +1,11 @@
-var	changed = [],
+var changed, saving;
+
+$(function () {
+	console.log("openingTime JS loading");
+	changed = [];
 	saving = false;
+});
+
 function editTime(d) {
 	var timeModal	= $("#modalTime"),
 		selector	= $('#' + d);
@@ -129,3 +135,7 @@ function validateInput() {
 
 	return valid;
 }
+
+$(function () {
+	console.log("openingTimes JS executed");
+});

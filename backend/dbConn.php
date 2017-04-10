@@ -20,7 +20,7 @@ class dbConn
 				"mysql:host=" . self::$_db_host . ";dbname=" . self::$_db_name,
 				self::$_db_user, self::$_db_pass
 			);
-			self::$_db->exec("set names UTF-8");
+			self::$_db->exec("SET NAMES UTF-8");
 		} catch (PDOException $e){
 			error_reporting(0);
 			header('HTTP/1.1 500 Internal Server Error', true, 500);
