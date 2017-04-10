@@ -53,7 +53,7 @@ $nav = ob_get_clean();
 						$i = 0;
 						foreach ($constructor->subs as $name => $link) { ?>
 							
-							<li<?=$i==0?$active:null?>><a href="<?=$link?>"><?=$name?></a></li>
+							<li<?=/*$i==0?$active:null*/null?>><a href="<?=$link?>"><?=$name?></a></li>
 							<?php $i++; } ?>
 					</ul>
 					<div class="hidden-sm hidden-md hidden-lg"><span style="opacity: 0; visibility: hidden">-</span></div>

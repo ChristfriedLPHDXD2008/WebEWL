@@ -1,15 +1,14 @@
-var lastId,
-	menuItems,
-	scrollItems,
-	update = true;
+var lastId, menuItems, scrollItems, update;
 
 $(function () {
 	console.log("javascript loading");
+	lastId = null;
 	menuItems = $("#right-nav").find("li a");
 	scrollItems = menuItems.map(function(){
 		var item = $($(this).attr("href"));
 		if (item.length) { return item; }
 	});
+	update = true;
 });
 
 $(window).scroll(function() {
@@ -37,13 +36,13 @@ function ScrollToElement(element) {
 	update = false;
 	//noinspection JSValidateTypes
 	var time = 0,
-		topOffset = (element.offset()).top - 80,
+		topOffset = $(element).offset().top - 80,
 		scrollTop = $(window).scrollTop();
 
 	if (topOffset > scrollTop) time = topOffset - scrollTop;
 	else time = scrollTop - topOffset;
 
-	$('html').animate({ scrollTop: topOffset }, time, function () {
+	$('html, body').animate({ scrollTop: topOffset }, time, function () {
 		update = true;
 		$(window).scroll();
 	});
@@ -64,7 +63,8 @@ $(function (){
 	$("#right-nav").find("li a").click(function (e) {
 		if ($("#navbar-collapse.collapse").hasClass("in"))
 			$(".navbar-toggle").click();
-		ScrollToElement($($(this).attr("href")));
+		var element = $(this).attr("href");
+		ScrollToElement(element);
 		e.preventDefault();
 	});
 
