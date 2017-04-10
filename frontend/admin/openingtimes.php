@@ -17,22 +17,30 @@ $days = $ot->getOpeningTimes();
 				</tr>
 				</thead>
 				<tbody>
-				<?php foreach ($days as $day) { ?>
+				<?php foreach ($days as $day) {
+					
+					$time1 = date("G:i", strtotime($day["opening"]));
+					$time2 = date("G:i", strtotime($day["closing"]));
+					
+					$closed = false;
+					if ($time1 == $time2) $closed = true;
+					
+					?>
 					<tr>
 						<td><?=$day["day"]?></td>
 						<td class="short">von</td>
 						<td class="time">
 							<div>
-								<a href="#" onclick="editTime('d<?=$day["DID"]?>1'); return false;" id="d<?=$day["DID"]?>1" data-day="<?=$day["day"]?> von">
-									<?=date("G:i", strtotime($day["opening"]))?>
+								<a href="#" onclick="editTime('d<?=$day["DID"]?>1'); return false;" id="d<?=$day["DID"]?>1" data-day="<?=$day["day"]?> von" data-before="<?=$time1?>" class="<?=$closed?"closed":null?>">
+									<?=$time1?>
 								</a>
 							</div>
 						</td>
 						<td class="short">bis</td>
 						<td class="time">
 							<div>
-								<a href="#" onclick="editTime('d<?=$day["DID"]?>2'); return false;" id="d<?=$day["DID"]?>2" data-day="<?=$day["day"]?> bis">
-								<?=date("G:i", strtotime($day["closing"]))?>
+								<a href="#" onclick="editTime('d<?=$day["DID"]?>2'); return false;" id="d<?=$day["DID"]?>2" data-day="<?=$day["day"]?> bis" data-before="<?=$time2?>">
+									<?=$time2?>
 								</a>
 							</div>
 						</td>
@@ -51,8 +59,8 @@ $days = $ot->getOpeningTimes();
 				<tr>
 					<td colspan="7">
 						<em>
-							Zeiten durch Klicken bearbeiten.
-							<br>Gleiche Zeiten an einem Tag wird als "geschlossen" angezeigt.
+							Zeiten durch Klicken bearbeiten - Änderungen werden <span class="changed">markiert</span>.
+							<br>Gleiche Zeiten an einem Tag werden als "<span class="closed">geschlossen</span>" angezeigt.
 							<br>Manuelle Eingabe überschreibt die Zeiten.
 							<noscript>
 								<br><span class="text-danger">Javascript muss zum Bearbeiten aktiviert sein.</span>
@@ -81,56 +89,9 @@ $days = $ot->getOpeningTimes();
 					</div>
 				</div>
 				<div class="modal-footer" id="modalFooter">
-					<button id="btnSaveTime" type="button" class="btn btn-primary">Übernehmen</button>
+					<button id="btnSaveTime" type="button" class="btn btn-primary" onclick="saveTime(0);">Übernehmen</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-	<script>
-		var changed = [];
-		function editTime(d) {
-			var timeModal	= $("#modalTime"),
-				selector	= $('#' + d);
-			timeModal.find("#modalTitle").html("Geöffnet am " + selector.data("day"));
-			timeModal.find("#inpHour").val(selector.html().split(":")[0].replace(/\s/g,''));
-			timeModal.find("#inpMin").val(selector.html().split(":")[1].replace(/\s/g,''));
-			timeModal.find("#btnSaveTime").attr("onclick", "saveTime('" + d + "');");
-			timeModal.modal("show");
-		}
-		function saveTime(d) {
-			var timeModal	= $("#modalTime"),
-				selector	= $('#' + d),
-				hour		= timeModal.find("#inpHour").val(),
-				min			= timeModal.find("#inpMin").val();
-			
-			if (hour.length > 2 || hour.length < 1 || min.length !== 2) {
-				if (hour.length > 2 || hour.length < 1)
-					timeModal.find("#inpHour").parent().addClass("has-error");
-				else timeModal.find("#inpHour").parent().removeClass("has-error");
-				if (min.length !== 2)
-					timeModal.find("#inpMin").parent().addClass("has-error");
-				else timeModal.find("#inpMin").parent().removeClass("has-error");
-				return;
-			}
-
-			timeModal.find("#inpHour").parent().removeClass("has-error");
-			timeModal.find("#inpMin").parent().removeClass("has-error");
-
-			timeModal.modal('hide');
-			
-			selector.html(hour + ":" + min);
-			changed.push(d);
-			console.log(changed);
-		}
-		function setZero(dn1, dn2) {
-			$('#' + dn1 + ", #" + dn2).html("0:00");
-			changed.push(dn1, dn2);
-		}
-		function submitChanges() {
-			var json = JSON.stringify(changed);
-			if (!(json.replace(/[\[\]]*/g, ''))) return;
-			alert(json.replace(/[\[\]]*/g, ''));
-		}
-	</script>
 </div>

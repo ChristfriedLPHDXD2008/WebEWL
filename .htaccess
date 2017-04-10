@@ -1,4 +1,4 @@
-<files .htaccess>
+<files ~ "^\.htaccess">
 	order deny,allow
 	deny from all
 	satisfy all
@@ -18,6 +18,10 @@ RewriteCond %{HTTP_HOST} !ewl.github
 RewriteCond %{HTTP_HOST} !localhost
 RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteRule (^|/)frontend(/|$) - [F]
+RewriteRule (^|/)backend(/|$) - [F]
+RewriteRule (^|/)secure(/|$) - [F]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} ^/([^/]*)?/?([^/]*)?/?([^/]*)?/?([^/]*)? [NC]

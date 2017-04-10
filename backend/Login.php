@@ -5,9 +5,9 @@ require_once __BACKEND__ . "/dbConn.php";
 class Login
 {
 	private static $_db;
-	public function __construct()
+	public function __construct($json = false)
 	{
-		self::$_db = dbConn::getConnection();
+		self::$_db = dbConn::getConnection($json);
 	}
 	
 	public function checkLogin()

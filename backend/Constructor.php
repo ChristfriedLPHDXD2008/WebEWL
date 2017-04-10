@@ -28,6 +28,7 @@ class Constructor
 				break;
 			case "öffnungszeiten":
 				$this->headline		= "Öffnungszeiten";
+				$this->jsfiles[]	= "admin/openingTimes.js";
 				$this->viewfile		= "openingtimes.php";
 				break;
 			case "settings":

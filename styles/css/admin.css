@@ -183,12 +183,20 @@ main .btn {
 
 #opening-times .panel-body {
   overflow-y: auto; }
+  #opening-times .panel-body span.changed {
+    color: #699a4e; }
+  #opening-times .panel-body span.closed {
+    color: #c75554; }
 #opening-times tr > td.time {
   text-align: right;
   padding-right: 4%; }
   #opening-times tr > td.time > div {
     display: inline-block;
     min-width: 70px; }
+  #opening-times tr > td.time a.changed {
+    color: #699a4e; }
+  #opening-times tr > td.time a.closed {
+    color: #c75554; }
 #opening-times .modal {
   text-align: center; }
   #opening-times .modal .modal-dialog {
@@ -214,7 +222,7 @@ main .btn {
       padding: 0;
       width: 10%;
       text-align: center; }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 470px) {
   #opening-times .modal:before {
     display: inline-block;
     vertical-align: middle;

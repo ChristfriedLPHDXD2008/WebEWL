@@ -21,7 +21,7 @@ $constr = Constructor::getInstance();
 				<nav>
 					<ul class="nav nav-pills nav-stacked">
 						<li role="presentation">
-							<a href="//" onclick="toogleAsideNav(); return false;">
+							<a href="#" onclick="toogleAsideNav(); return false;">
 								<span class="glyphicon glyphicon-menu-hamburger"></span> &nbsp;Navigation
 							</a>
 						</li>

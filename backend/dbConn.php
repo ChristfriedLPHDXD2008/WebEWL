@@ -7,11 +7,11 @@ class dbConn
 	protected static $_db_host = DB_HOST;
 	protected static $_db_name = DB_NAME;
 	protected static $_db_user = DB_USER;
-	protected static $_db_pass = DB_PASS;
+	protected static $_db_pass = DB_PASS + "67";
 	protected static $_db;
 	private static $_instance = null;
 	
-	protected function __construct()
+	protected function __construct($json = false)
 	{
 		try {
 			self::$_db = new PDO(
@@ -22,22 +22,28 @@ class dbConn
 		} catch (PDOException $e){
 			error_reporting(0);
 			header('HTTP/1.1 500 Internal Server Error', true, 500);
-			die("<h1>500 Internal Server Error</h1><span>Datenbank __construct() fehlgeschlagen.</span>");
+			$error = "Datenbank __construct() fehlgeschlagen.";
+			if ($json)
+			{
+				header('Content-Type: application/json');
+				die(json_encode(["error" => "$error", "error_code" => $e->getCode()]));
+			}
+			die("<h1>500 Internal Server Error</h1><span>$error</span>");
 		}
 		self::$_instance = $this;
 		return true;
 	}
 	
-	static public function getInstance()
+	static public function getInstance($json = false)
 	{
 		if (self::$_instance === null)
-			self::$_instance = new dbConn();
+			self::$_instance = new dbConn($json);
 		return self::$_instance;
 	}
 	
-	static public function getConnection()
+	static public function getConnection($json = false)
 	{
-		self::getInstance();
+		self::getInstance($json);
 		return self::$_db;
 	}
 	
