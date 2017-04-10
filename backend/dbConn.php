@@ -7,12 +7,14 @@ class dbConn
 	protected static $_db_host = DB_HOST;
 	protected static $_db_name = DB_NAME;
 	protected static $_db_user = DB_USER;
-	protected static $_db_pass = DB_PASS + "67";
+	protected static $_db_pass = DB_PASS;
 	protected static $_db;
 	private static $_instance = null;
+	private static $json;
 	
 	protected function __construct($json = false)
 	{
+		self::$json = $json;
 		try {
 			self::$_db = new PDO(
 				"mysql:host=" . self::$_db_host . ";dbname=" . self::$_db_name,
@@ -44,12 +46,14 @@ class dbConn
 	static public function getConnection($json = false)
 	{
 		self::getInstance($json);
-		return self::$_db;
+		return self::getPdo();
 	}
 	
 	protected static function getPdo()
 	{
-		if (is_null(self::$_db)) { die("Datenbankverbindung unmöglich."); }
+		if (is_null(self::$_db)) {
+			die("Datenbankverbindung unmöglich.");
+		}
 		return self::$_db;
 	}
 	

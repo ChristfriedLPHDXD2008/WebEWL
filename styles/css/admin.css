@@ -197,6 +197,20 @@ main .btn {
     color: #699a4e; }
   #opening-times tr > td.time a.closed {
     color: #c75554; }
+#opening-times .status-bar {
+  display: block;
+  width: 100%; }
+  #opening-times .status-bar button {
+    display: inline-block;
+    float: left; }
+  #opening-times .status-bar #status {
+    display: inline-block;
+    float: left;
+    margin: 9px 15px 0;
+    font-size: 0.8em;
+    font-family: "Monserrat", Helvetica, sans-serif; }
+    #opening-times .status-bar #status span {
+      animation: dismiss-status 6s linear 0s 1 forwards; }
 #opening-times .modal {
   text-align: center; }
   #opening-times .modal .modal-dialog {
@@ -228,5 +242,22 @@ main .btn {
     vertical-align: middle;
     content: " ";
     height: 100%; } }
+
+@keyframes dismiss-status {
+  0% {
+    opacity: 0;
+    display: inline-block; }
+  7% {
+    opacity: 1;
+    display: inline-block; }
+  92% {
+    opacity: 1;
+    display: inline-block; }
+  99% {
+    opacity: 0;
+    display: inline-block; }
+  100% {
+    opacity: 0;
+    display: none; } }
 
 /*# sourceMappingURL=admin.css.map */

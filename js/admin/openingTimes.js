@@ -1,4 +1,5 @@
-var changed = [];
+var	changed = [],
+	saving = false;
 function editTime(d) {
 	var timeModal	= $("#modalTime"),
 		selector	= $('#' + d);
@@ -37,11 +38,9 @@ function saveTime(d) {
 		both.addClass("closed");
 	else
 		both.removeClass("closed");
-
-	console.log(changed);
 }
 function setZero(dn1, dn2) {
-	var selectors = $('#' + dn1 + ", #" + dn2);
+	var selectors = $('#' + dn1 + ', #' + dn2);
 	selectors.html("0:00");
 	selectors.addClass("changed");
 	selectors.addClass("closed");
@@ -49,16 +48,62 @@ function setZero(dn1, dn2) {
 	pushChange(dn2);
 }
 function submitChanges() {
+	if (saving) return;
+	saving = true;
+
 	var times = {};
 	$.each(changed, function (i, v) {
 		times[v] = $('#' + v).html();
 	});
-	console.log(times);
-	if (!times.length > 0) return;
-	var json = window.JSON.stringify(changed);
+	if ($.isEmptyObject(times)) return;
+
+	var json = JSON.stringify(times, null);
+	console.log("starting ajax post");
 	console.log(json);
+	$.ajax({
+		url: "/handler/openingTimes.handler.php",
+		contentType: "application/json; charset=utf-8",
+		type: "POST",
+		data: json,
+		dataType: "json",
+		success: function (data) {
+			console.log(data);
+			submitSuccessHandler(data);
+			saving = false;
+		},
+		error: function (xhr, ajaxOptions, thrownError) {
+			if (xhr.status === 200)
+				console.log(ajaxOptions);
+			else {
+				console.log(xhr.status);
+				console.log(thrownError);
+			}
+			saving = false;
+		}
+	});
+	console.log("ajax passed");
+}
+function submitSuccessHandler(data) {
+	if ("error" in data) {
+		setMessage("error " + data["error"]);
+		return;
+	}
+	if ("success" in data) {
+		$("td.time a.changed").each(function () {
+			$(this).removeClass("changed");
+			var before = $(this).html();
+			$(this).data("before", before);
+		});
+		setMessage(data["success"]);
+		changed = [];
+	}
+}
+function setMessage(msg) {
+	var status = $("#status");
+	status.html("<span>" + msg + "</span>");
 }
 function pushChange(d) {
+	if ($.inArray(d, changed) >= 0) alert(d);
 	if ($.inArray(d, changed) >= 0) return;
 	changed.push(d);
 }

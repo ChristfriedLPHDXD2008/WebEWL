@@ -1,8 +1,8 @@
 <?php
 
-require_once __BACKEND__ . "/dbOpeningTimes.php";
-$ot = dbOpeningTimes::getInstance();
-$days = $ot->getOpeningTimes();
+require_once __BACKEND__ . "/OpeningTimes.php";
+$optim = new OpeningTimes();
+$days = $optim->getOpeningTimes();
 
 ?>
 <div class="col-xs-12" id="opening-times">
@@ -26,34 +26,30 @@ $days = $ot->getOpeningTimes();
 					if ($time1 == $time2) $closed = true;
 					
 					?>
+					
 					<tr>
 						<td><?=$day["day"]?></td>
 						<td class="short">von</td>
 						<td class="time">
 							<div>
-								<a href="#" onclick="editTime('d<?=$day["DID"]?>1'); return false;" id="d<?=$day["DID"]?>1" data-day="<?=$day["day"]?> von" data-before="<?=$time1?>" class="<?=$closed?"closed":null?>">
-									<?=$time1?>
-								</a>
+								<a href="#" onclick="editTime('d<?=$day["DID"]?>1'); return false;" id="d<?=$day["DID"]?>1" data-day="<?=$day["day"]?> von" data-before="<?=$time1?>" class="<?=$closed?"closed":null?>"><?=$time1?></a>
 							</div>
 						</td>
 						<td class="short">bis</td>
 						<td class="time">
 							<div>
-								<a href="#" onclick="editTime('d<?=$day["DID"]?>2'); return false;" id="d<?=$day["DID"]?>2" data-day="<?=$day["day"]?> bis" data-before="<?=$time2?>">
-									<?=$time2?>
-								</a>
+								<a href="#" onclick="editTime('d<?=$day["DID"]?>2'); return false;" id="d<?=$day["DID"]?>2" data-day="<?=$day["day"]?> bis" data-before="<?=$time2?>" class="<?=$closed?"closed":null?>"><?=$time2?></a>
 							</div>
 						</td>
 						<td class="short">Uhr</td>
 						<td class="text-center">
 							<a href="#"><span class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="left" title="Manuelle Eingabe"></span></a>
-							&nbsp;
 							<a href="#"><span class="glyphicon glyphicon-eye-close" data-toggle="tooltip" data-placement="left" title="Tag für Kunden ausblenden"></span></a>
-							&nbsp;
 							<a href="#" onclick="setZero('d<?=$day["DID"]?>1', 'd<?=$day["DID"]?>2'); return false;"><span class="glyphicon glyphicon-off" data-toggle="tooltip" data-placement="left" title="An diesem Tag geschlossen"></span></a>
 						</td>
 					</tr>
 				<?php } ?>
+				
 				</tbody>
 				<tfoot>
 				<tr>
@@ -70,7 +66,10 @@ $days = $ot->getOpeningTimes();
 				</tr>
 				</tfoot>
 			</table>
-			<button type="button" class="btn btn-danger" onclick="submitChanges();">Speichern</button>
+			<div class="status-bar">
+				<button type="button" class="btn btn-danger" onclick="submitChanges();">Speichern</button>
+				<span id="status"><span>Daten gespeichert</span></span>
+			</div>
 		</div>
 	</div>
 	
