@@ -192,11 +192,13 @@ main .btn {
   padding-right: 4%; }
   #opening-times tr > td.time > div {
     display: inline-block;
-    min-width: 70px; }
+    min-width: 55px; }
   #opening-times tr > td.time a.changed {
     color: #699a4e; }
   #opening-times tr > td.time a.closed {
     color: #c75554; }
+  #opening-times tr > td.time a {
+    transition: color .2s ease; }
 #opening-times .status-bar {
   display: block;
   width: 100%; }
@@ -208,7 +210,14 @@ main .btn {
     float: left;
     margin: 9px 15px 0;
     font-size: 0.8em;
-    font-family: "Monserrat", Helvetica, sans-serif; }
+    font-family: "Monserrat", Helvetica, sans-serif;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
     #opening-times .status-bar #status span {
       animation: dismiss-status 6s linear 0s 1 forwards; }
 #opening-times .modal {

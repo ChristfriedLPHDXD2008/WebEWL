@@ -12,6 +12,8 @@ function editTime(d) {
 	timeModal.find("#modalTitle").html("Geöffnet am " + selector.data("day"));
 	timeModal.find("#inpHour").val(selector.html().split(":")[0].replace(/\s/g,''));
 	timeModal.find("#inpMin").val(selector.html().split(":")[1].replace(/\s/g,''));
+	timeModal.find("#inpHour").parent().removeClass("has-error");
+	timeModal.find("#inpMin").parent().removeClass("has-error");
 	timeModal.find("#btnSaveTime").attr("onclick", "saveTime('" + d + "');");
 	timeModal.modal("show");
 }
@@ -91,7 +93,7 @@ function submitChanges() {
 }
 function submitSuccessHandler(data) {
 	if ("error" in data) {
-		setMessage("error " + data["error"]);
+		setMessage(data["error"]);
 		return;
 	}
 	if ("success" in data) {
@@ -109,7 +111,6 @@ function setMessage(msg) {
 	status.html("<span>" + msg + "</span>");
 }
 function pushChange(d) {
-	if ($.inArray(d, changed) >= 0) alert(d);
 	if ($.inArray(d, changed) >= 0) return;
 	changed.push(d);
 }

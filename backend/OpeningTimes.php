@@ -23,10 +23,14 @@ class OpeningTimes
 			foreach ($day as $num => $value) {
 				switch ($num) {
 					case 1:
-						$query .= "opening='" . str_pad($value, 4, "0", STR_PAD_LEFT) . "'";
+						$value = str_pad(str_replace(":", "", $value), 4, "0", STR_PAD_LEFT);
+						if (is_numeric($value))
+							$query .= "opening='" . $value . "'";
 						break;
 					case 2:
-						$query .= "closing='" . str_pad($value, 4, "0", STR_PAD_LEFT) . "'";
+						$value = str_pad(str_replace(":", "", $value), 4, "0", STR_PAD_LEFT);
+						if (is_numeric($value))
+							$query .= "closing='" . $value . "'";
 						break;
 					case 3:
 						$query .= "manual=";
