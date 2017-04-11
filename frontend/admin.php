@@ -30,7 +30,7 @@ $constr = Constructor::getInstance();
 			</div>
 		</div>
 	</div>
-	<aside class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+	<aside class="col-xs-12 col-sm-3 col-lg-2">
 		<nav>
 			<div class="panel panel-default">
 				<div class="panel-heading">Allgemein</div>
@@ -85,7 +85,7 @@ $constr = Constructor::getInstance();
 			</div>
 		</nav>
 	</aside>
-	<section class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+	<section class="col-xs-12 col-sm-9 col-lg-10">
 		<?php if (!empty($constr->headline)) { ?>
 			
 		<div class="row">

@@ -5,7 +5,7 @@ $optim = new OpeningTimes();
 $days = $optim->getOpeningTimes();
 
 ?>
-<div class="col-xs-12" id="opening-times">
+<div class="col-xs-12 col-lg-9" id="opening-times">
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<table class="table">
@@ -101,7 +101,7 @@ $days = $optim->getOpeningTimes();
 					</div>
 				</div>
 				<div class="modal-footer" id="modalFooter">
-					<button id="btnSaveTime" type="button" class="btn btn-primary" onclick="saveTime(0);">Übernehmen</button>
+					<button id="btnSaveTime" type="button" class="btn btn-primary" onclick="">Übernehmen</button>
 				</div>
 			</div>
 		</div>
@@ -123,8 +123,8 @@ $days = $optim->getOpeningTimes();
 					</div>
 				</div>
 				<div class="modal-footer" id="modalFooter">
-					<button id="btnDiscardManual" type="button" class="btn btn-default" onclick="discardManual(0); return false;">Doch die Zeiten verwenden</button>
-					<button id="btnSaveManual" type="button" class="btn btn-primary" onclick="saveManual(0); return false;">Übernehmen</button>
+					<button id="btnDiscardManual" type="button" class="btn btn-default" onclick="">Doch die Zeiten verwenden</button>
+					<button id="btnSaveManual" type="button" class="btn btn-primary" onclick="">Übernehmen</button>
 				</div>
 			</div>
 		</div>
@@ -132,6 +132,17 @@ $days = $optim->getOpeningTimes();
 	
 </div>
 
-<div>
-
+<div class="col-xs-12 col-lg-3">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			Über Änderungen benachrichtigen
+		</div>
+		<div class="panel-body">
+			<ul>
+				<li>Aktualisierung</li>
+				<li>Facebook</li>
+			</ul>
+		</div>
+	</div>
 </div>
+

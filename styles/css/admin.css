@@ -171,7 +171,7 @@ main section div.row div.panel:not(.no-shadow) {
   -moz-box-shadow: 0 4px 10px 0px rgba(15, 15, 15, 0.3);
   box-shadow: 0 4px 10px 0px rgba(15, 15, 15, 0.3); }
 @media only screen and (min-width: 817px) {
-  main section {
+  main section [class^="col-"] {
     padding-left: 0 !important; } }
 main section .headline {
   font-family: "Monserrat", Helvetica, sans-serif;
@@ -192,6 +192,9 @@ main .btn {
 
 .edit.changed {
   color: #699a4e; }
+
+.panel-heading {
+  font-family: "Monserrat", Helvetica, sans-serif; }
 
 #opening-times .panel-body {
   overflow-y: auto; }
