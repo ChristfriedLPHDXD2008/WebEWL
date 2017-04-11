@@ -6,7 +6,46 @@ $(function () {
 	saving = false;
 });
 
+function editManual(d) {
+	if (d === 0) return;
+	var manuModal	= $("#modalManual"),
+		selector	= $('#' + d);
+	manuModal.find("#modalTitle").html("Eingabe für " + selector.data("day"));
+	manuModal.find("#btnDiscardManual").attr("onclick", "discardManual('" + d + "'); return false;");
+	manuModal.find("#btnSaveManual").attr("onclick", "saveManual('" + d + "'); return false;");
+	manuModal.find("#inpManual").val(selector.data("value"));
+	manuModal.modal("show");
+}
+function saveManual(d) {
+	if (d === 0) return;
+
+	var manuModal	= $("#modalManual"),
+		selector	= $('#' + d),
+		data		= manuModal.find("#inpManual").val();
+
+	data = data.replace(/[<>"']*/g, '');
+
+	manuModal.modal('hide');
+
+	if ($.trim(selector.data("value")).length > 0 && selector.data("value") === data) return;
+	if (selector.data("value") !== data) selector.addClass("changed");
+
+	selector.data("value", data);
+
+	pushChange(d);
+
+	if ($.trim(selector.data("value")).length > 0)
+		selector.addClass("occupied");
+	else selector.removeClass("occupied");
+}
+function discardManual(d) {
+	if (d === 0) return;
+	var selector = $('#' + d);
+	if ($.trim(selector.data("value")).length > 0) pushChange(d);
+	selector.data("value", 0);
+}
 function editTime(d) {
+	if (d === 0) return;
 	var timeModal	= $("#modalTime"),
 		selector	= $('#' + d);
 	timeModal.find("#modalTitle").html("Geöffnet am " + selector.data("day"));
@@ -14,7 +53,7 @@ function editTime(d) {
 	timeModal.find("#inpMin").val(selector.html().split(":")[1].replace(/\s/g,''));
 	timeModal.find("#inpHour").parent().removeClass("has-error");
 	timeModal.find("#inpMin").parent().removeClass("has-error");
-	timeModal.find("#btnSaveTime").attr("onclick", "saveTime('" + d + "');");
+	timeModal.find("#btnSaveTime").attr("onclick", "saveTime('" + d + "'); return false;");
 	timeModal.modal("show");
 }
 function saveTime(d) {
@@ -24,7 +63,7 @@ function saveTime(d) {
 		selector	= $('#' + d),
 		hour		= timeModal.find("#inpHour").val(),
 		min			= timeModal.find("#inpMin").val(),
-		combi		= hour + ":" + min;
+		combi		= (hour + ":" + min).replace(/[<>"'\\?]*/g, '');
 
 	if (!validateInput()) return;
 
@@ -59,13 +98,24 @@ function submitChanges() {
 	if (saving) return;
 	saving = true;
 
+	console.log("Submitting...");
+
 	var times = {};
 	$.each(changed, function (i, v) {
-		times[v] = $('#' + v).html();
+		var sel = $('#' + v);
+		if (sel.has("span").length)
+			times[v] = sel.data("value");
+		else times[v] = sel.html();
 	});
-	if ($.isEmptyObject(times)) return;
+
+	if ($.isEmptyObject(times)) {
+		resetEverything();
+		setMessage("Keine Änderungen vorgenommen.");
+		return;
+	}
 
 	var json = JSON.stringify(times, null);
+	json = json.replace(/[<>'\\?]*/g, '');
 	console.log("starting ajax post");
 	console.log(json);
 	$.ajax({
@@ -97,14 +147,20 @@ function submitSuccessHandler(data) {
 		return;
 	}
 	if ("success" in data) {
-		$("td.time a.changed").each(function () {
-			$(this).removeClass("changed");
-			var before = $(this).html();
-			$(this).data("before", before);
-		});
+		resetEverything();
 		setMessage(data["success"]);
-		changed = [];
+		return;
 	}
+	setMessage("Ein undokumentierter Fehler ist aufgetreten.");
+}
+function resetEverything() {
+	$("td a.changed").each(function () {
+		$(this).removeClass("changed");
+		var before = $(this).html();
+		$(this).data("before", before);
+	});
+	changed = [];
+	saving = false;
 }
 function setMessage(msg) {
 	var status = $("#status");
@@ -136,6 +192,15 @@ function validateInput() {
 
 	return valid;
 }
+
+$('input#inpManual').on('keypress', function (e) {
+	var reg = new RegExp(/^[<>"'\\?]*$/g),
+		key = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+	if (reg.test(key)) {
+		e.preventDefault();
+		return false;
+	}
+});
 
 $(function () {
 	console.log("openingTimes JS executed");

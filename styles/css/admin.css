@@ -181,24 +181,28 @@ main .btn {
   font-family: "Monserrat", Helvetica, sans-serif;
   font-size: 0.9em; }
 
+.edit {
+  transition: color .2s ease; }
+
+.edit.closed {
+  color: #c75554; }
+
+.edit.occupied {
+  color: #f7af4b; }
+
+.edit.changed {
+  color: #699a4e; }
+
 #opening-times .panel-body {
   overflow-y: auto; }
-  #opening-times .panel-body span.changed {
-    color: #699a4e; }
-  #opening-times .panel-body span.closed {
-    color: #c75554; }
+  #opening-times .panel-body .options {
+    cursor: default; }
 #opening-times tr > td.time {
   text-align: right;
   padding-right: 4%; }
   #opening-times tr > td.time > div {
     display: inline-block;
     min-width: 55px; }
-  #opening-times tr > td.time a.changed {
-    color: #699a4e; }
-  #opening-times tr > td.time a.closed {
-    color: #c75554; }
-  #opening-times tr > td.time a {
-    transition: color .2s ease; }
 #opening-times .status-bar {
   display: block;
   width: 100%; }
@@ -226,20 +230,20 @@ main .btn {
     display: inline-block;
     text-align: left;
     vertical-align: middle; }
-  #opening-times .modal #modalBody .input-box {
+  #opening-times .modal #modalTimeBody .input-box {
     display: block;
     position: relative;
     white-space: nowrap; }
-    #opening-times .modal #modalBody .input-box input, #opening-times .modal #modalBody .input-box label {
+    #opening-times .modal #modalTimeBody .input-box input, #opening-times .modal #modalTimeBody .input-box label {
       margin: 0;
       box-sizing: border-box;
       display: inline-block;
       width: 45%; }
-      #opening-times .modal #modalBody .input-box input#inpHour, #opening-times .modal #modalBody .input-box label#inpHour {
+      #opening-times .modal #modalTimeBody .input-box input#inpHour, #opening-times .modal #modalTimeBody .input-box label#inpHour {
         text-align: right; }
-      #opening-times .modal #modalBody .input-box input[for=inpHour], #opening-times .modal #modalBody .input-box label[for=inpHour] {
+      #opening-times .modal #modalTimeBody .input-box input[for=inpHour], #opening-times .modal #modalTimeBody .input-box label[for=inpHour] {
         text-align: right; }
-    #opening-times .modal #modalBody .input-box .divider {
+    #opening-times .modal #modalTimeBody .input-box .divider {
       display: inline-block;
       margin: 0;
       padding: 0;

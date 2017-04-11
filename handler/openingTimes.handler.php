@@ -24,7 +24,8 @@ $days = [];
 foreach ($data as $alt => $time)
 	$days[substr($alt, 1, 1)][substr($alt, 2, 1)] = $time;
 
-if (!$optim->updateOpeningTimes($days))
+$exec = $optim->updateOpeningTimes($days);
+if ($exec !== true)
 	die(json_encode(["error" => "Daten wurden nicht gespeichert.", "error_code" => 50]));
 
 die(json_encode(["success" => "Daten gespeichert."]));

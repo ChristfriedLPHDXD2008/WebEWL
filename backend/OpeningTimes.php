@@ -8,6 +8,14 @@ class OpeningTimes
 		self::$_db = dbConn::getConnection($json);
 	}
 	
+	public static function FilterDB($string) {
+		$string = str_replace("'", "", $string);
+		$string = str_replace('"', "", $string);
+		$string = str_replace('<?', "", $string);
+		$string = str_replace('?>', "", $string);
+		return $string;
+	}
+	
 	public function getOpeningTimes() {
 		$stmt = self::$_db->prepare("SELECT * FROM opening_times");
 		return $stmt->execute() && !$stmt->rowCount() > 0 ? false : $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -21,6 +29,7 @@ class OpeningTimes
 			$count = count($day);
 			$i = 1;
 			foreach ($day as $num => $value) {
+				$value = str_replace("'", "", $value);
 				switch ($num) {
 					case 1:
 						$value = str_pad(str_replace(":", "", $value), 4, "0", STR_PAD_LEFT);
@@ -34,9 +43,9 @@ class OpeningTimes
 						break;
 					case 3:
 						$query .= "manual=";
-						if (empty(trim($value)) || $value == null || strtolower($value) == "null")
+						if (empty($value) || $value == null || strtolower($value) == "null")
 							$query .= "NULL";
-						else $query .= "'" . $value . "'";
+						else $query .= "'" . self::FilterDB($value) . "'";
 						break;
 				}
 				if ($i != $count) $query .= ",";
@@ -50,6 +59,6 @@ class OpeningTimes
 		if ($stmt->execute() && $stmt->rowCount() > 0)
 			return true;
 		
-		return false;
+		return true;
 	}
 }
