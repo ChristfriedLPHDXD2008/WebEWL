@@ -44,3 +44,4 @@ define('Cs_FPH',		'_fph');
 
 # Funktionen
 function print_array($array) { echo "<pre>" . print_r($array, true) . "</pre>"; }
+function decodetime($time) { return date("G:i", strtotime($time)); }

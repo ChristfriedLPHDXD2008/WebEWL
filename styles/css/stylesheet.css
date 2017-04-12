@@ -92,6 +92,9 @@ body {
 #wrapper {
   background: url("/img/raster-2x2.png") repeat center center fixed; }
 
+.font-alt {
+  font-family: "Monserrat", Helvetica, sans-serif; }
+
 nav {
   display: block;
   position: fixed;
@@ -244,6 +247,10 @@ main {
     cursor: zoom-in; }
   main blockquote {
     cursor: default; }
+  main .address-addon {
+    display: inline-block;
+    width: 72px;
+    text-align: right; }
 
 aside#sidebar {
   -webkit-flex: 0 0 25%;
@@ -373,5 +380,13 @@ article {
       -webkit-order: 0;
       -ms-flex-order: 0;
       order: 0; } }
+
+#optim-table {
+  width: auto;
+  cursor: default; }
+  #optim-table td {
+    cursor: default; }
+  #optim-table tbody > tr > td:first-child {
+    width: 170px; }
 
 /*# sourceMappingURL=stylesheet.css.map */

@@ -177,6 +177,8 @@ main section .headline {
   font-family: "Monserrat", Helvetica, sans-serif;
   margin: 10px 5px;
   font-size: 1.7em; }
+main section .col-overflow .panel {
+  overflow: auto; }
 main .btn {
   font-family: "Monserrat", Helvetica, sans-serif;
   font-size: 0.9em; }
@@ -194,6 +196,9 @@ main .btn {
   color: #699a4e; }
 
 .panel-heading {
+  font-family: "Monserrat", Helvetica, sans-serif; }
+
+.optim-heading {
   font-family: "Monserrat", Helvetica, sans-serif; }
 
 #opening-times .panel-body {

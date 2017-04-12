@@ -9,7 +9,11 @@ $_constr = Constructor::getInstance();
 $_constr->view = "view";
 if (@$_GET[0] == "admin") {
 	
-	$login = new Login();
+	try {
+		$login = new Login();
+	} catch (Exception $e) {
+		die("<h1>500 Internal Server Error<br></h1>" . $e->getMessage());
+	}
 	
 	if (!$login->checkLogin())
 		$_constr->view = "login";

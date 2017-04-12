@@ -56,7 +56,8 @@ class Constructor
 		}
 		else switch (@$_GET[0]) {
 			default:
-				$this->subs			=	array_merge($this->subs, [
+				$this->headline		= "Startseite";
+				$this->subs			= array_merge($this->subs, [
 					"Pax et bonum"	=> "#wortschnecke",
 					"Fair Trade"	=> "/laden#fair-trade",
 					"Impressum"		=> "/impressum"
@@ -65,10 +66,12 @@ class Constructor
 				$this->viewfile		= "start.php";
 				break;
 			case "aktuell":
+				$this->headline		= "Aktuelles";
 				$this->viewfile		= "news.php";
 				break;
 			case "about":
-				$this->subs			=	array_merge($this->subs, [
+				$this->headline		= "Über Uns";
+				$this->subs			= array_merge($this->subs, [
 					"Verein und Weltladen"	=> "#verein-und-weltladen",
 					"Fairer Handel"			=> "#was-ist-fairer-handel",
 					"Was kann ich tun?"		=> "#was-kann-ich-tun"
@@ -79,7 +82,8 @@ class Constructor
 				$this->viewfile		= "about.php";
 				break;
 			case "verein":
-				$this->subs			=	array_merge($this->subs, [
+				$this->headline		= "Verein";
+				$this->subs			= array_merge($this->subs, [
 					"Vereinsleben"		=> "#vereinsleben",
 					"Veranstaltungen"	=> "#veranstaltungen",
 					"Bildungsarbeit"	=> "#bildungsarbeit"
@@ -87,7 +91,8 @@ class Constructor
 				$this->viewfile		= "verein.php";
 				break;
 			case "laden":
-				$this->subs			=	array_merge($this->subs, [
+				$this->headline		= "Laden";
+				$this->subs			= array_merge($this->subs, [
 					"Sortiment"		=> "#sortiment",
 					"Fair Trade"	=> "#fair-trade",
 					"Bestellung"	=> "#bestellungen",
@@ -99,7 +104,8 @@ class Constructor
 				$this->viewfile		= "store.php";
 				break;
 			case "kontakt":
-				$this->subs			=	array_merge($this->subs, [
+				$this->headline		= "Kontakt";
+				$this->subs			= array_merge($this->subs, [
 					"Kontakt"				=> "#kontakt",
 					"Öffnungszeiten"		=> "#öffnungszeiten",
 					"Anfahrt"				=> "#anfahrt",
@@ -108,6 +114,7 @@ class Constructor
 				$this->viewfile		= "contact.php";
 				break;
 			case "impressum":
+				$this->headline		= "Impressum";
 				$this->viewfile		= "impress.php";
 				break;
 		}

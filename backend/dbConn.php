@@ -30,7 +30,7 @@ class dbConn
 				header('Content-Type: application/json');
 				die(json_encode(["error" => "$error", "error_code" => $e->getCode()]));
 			}
-			die("<h1>500 Internal Server Error</h1><span>$error</span>");
+			throw new Exception("$error");
 		}
 		self::$_instance = $this;
 		return true;

@@ -51,7 +51,7 @@ $nav = ob_get_clean();
 					<ul id="right-nav" class="nav navbar-nav navbar-right">
 						<?php
 						$i = 0;
-						foreach ($constructor->subs as $name => $link) { ?>
+						foreach ($constr->subs as $name => $link) { ?>
 							
 							<li<?=/*$i==0?$active:null*/null?>><a href="<?=$link?>"><?=$name?></a></li>
 							<?php $i++; } ?>
