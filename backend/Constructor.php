@@ -95,9 +95,9 @@ class Constructor
 				$this->subs			= array_merge($this->subs, [
 					"Sortiment"		=> "#sortiment",
 					"Fair Trade"	=> "#fair-trade",
-					"Bestellung"	=> "#bestellungen",
-					"Standort"		=> "#standort",
-					"Mitarbeiter"	=> "#mitarbeiter"
+					"Bestellung"	=> "#bestellung",
+					"Mitarbeiter"	=> "#mitarbeiter",
+					"Standort"		=> "#standort"
 				]);
 				$this->jsfiles[]	= "OpenLayers.js";
 				$this->jsfiles[]	= "OpenStreetMap.js";
