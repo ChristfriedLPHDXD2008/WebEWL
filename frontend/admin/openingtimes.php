@@ -5,7 +5,7 @@ $optim = new OpeningTimes();
 $days = $optim->getOpeningTimes();
 
 ?>
-<div class="col-xs-12 col-lg-9" id="opening-times">
+<div class="col-xs-12 col-lg-8" id="opening-times">
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<table class="table">
@@ -43,8 +43,7 @@ $days = $optim->getOpeningTimes();
 						</td>
 						<td class="short">Uhr</td>
 						<td class="text-center options">
-							<a href="#" id="d<?=$day["DID"]?>3"
-							   class="edit <?=empty(trim($day["manual"]))?null:"occupied"?>"
+							<a href="#" id="d<?=$day["DID"]?>3" class="edit <?=empty(trim($day["manual"]))?null:"occupied"?>"
 							   onclick="editManual('d<?=$day["DID"]?>3'); return false;"
 							   data-value="<?=$day["manual"]?>"
 							   data-day="<?=$day["day"]?>"><span
@@ -52,7 +51,11 @@ $days = $optim->getOpeningTimes();
 										data-toggle="tooltip" data-placement="left"
 										title="Manuelle Eingabe"></span></a>
 							&nbsp;
-							<a href="#"><span class="glyphicon glyphicon-eye-close" data-toggle="tooltip" data-placement="left" title="Tag für Kunden ausblenden"></span></a>
+							<a href="#" id="d<?=$day["DID"]?>4" class="edit <?=$day["hidden"]?"occupied":null?> hide-data"
+							   onclick="hiddenDay('d<?=$day["DID"]?>4'); return false;"
+							   data-value="<?=$day["hidden"]?>" data-init="<?=$day["hidden"]?>"><span
+										class="eye glyphicon glyphicon-eye-<?=$day["hidden"]?"open":"close"?>"
+										data-toggle="tooltip" data-placement="left" title="Tag für Kunden <?=$day["hidden"]?"einblenden":"ausblenden"?>"></span></a>
 							&nbsp;
 							<a href="#" class="edit"
 							   onclick="setZero('d<?=$day["DID"]?>1', 'd<?=$day["DID"]?>2'); return false;"><span
@@ -132,7 +135,7 @@ $days = $optim->getOpeningTimes();
 	
 </div>
 
-<div class="col-xs-12 col-lg-3">
+<div class="col-xs-12 col-lg-4">
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			Über Änderungen benachrichtigen

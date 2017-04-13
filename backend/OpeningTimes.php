@@ -47,6 +47,10 @@ class OpeningTimes
 							$query .= "NULL";
 						else $query .= "'" . self::FilterDB($value) . "'";
 						break;
+					case 4:
+						if ($value == 0 || $value == 1)
+							$query .= "hidden='" . $value . "'";
+						break;
 				}
 				if ($i != $count) $query .= ",";
 				$i++;

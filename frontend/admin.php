@@ -30,7 +30,7 @@ $constr = Constructor::getInstance();
 			</div>
 		</div>
 	</div>
-	<aside class="col-xs-12 col-sm-3 col-lg-2">
+	<aside>
 		<nav>
 			<div class="panel panel-default">
 				<div class="panel-heading">Allgemein</div>
@@ -85,21 +85,23 @@ $constr = Constructor::getInstance();
 			</div>
 		</nav>
 	</aside>
-	<section class="col-xs-12 col-sm-9 col-lg-10">
-		<?php if (!empty($constr->headline)) { ?>
-			
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="panel panel-default">
-					<div class="panel-body"><h1 class="headline"><?=$constr->headline?></h1></div>
+	<section>
+		<div class="container-fluid">
+			<?php if (!empty($constr->headline)) { ?>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="panel panel-default">
+							<div class="panel-body"><h1 class="headline"><?=$constr->headline?></h1></div>
+						</div>
+					</div>
 				</div>
+			<?php } ?>
+
+			<div class="row">
+				<?php include_once __FRONTEND__ . "/admin/" . "$constr->viewfile"; ?>
+
 			</div>
-		</div>
-		<?php } ?>
-		
-		<div class="row">
-			<?php include_once __FRONTEND__ . "/admin/" . "$constr->viewfile"; ?>
-			
 		</div>
 	</section>
 </main>

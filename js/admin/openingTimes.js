@@ -27,7 +27,11 @@ function saveManual(d) {
 
 	manuModal.modal('hide');
 
-	if ($.trim(selector.data("value")).length > 0 && selector.data("value") === data) return;
+	if (selector.data("value") == data) {
+		revokeChange(d);
+		return;
+	}
+	if ($.trim(selector.data("value")).length > 0 && selector.data("value") == data) return;
 	if (selector.data("value") !== data) selector.addClass("changed");
 
 	selector.data("value", data);
@@ -40,9 +44,39 @@ function saveManual(d) {
 }
 function discardManual(d) {
 	if (d === 0) return;
-	var selector = $('#' + d);
+	var manuModal	= $("#modalManual"),
+		selector = $('#' + d);
 	if ($.trim(selector.data("value")).length > 0) pushChange(d);
-	selector.data("value", 0);
+	selector.data("value", "");
+
+	selector.addClass("changed");
+	selector.removeClass("occupied");
+
+	manuModal.modal('hide');
+}
+function hiddenDay(d) {
+	if (d === 0) return;
+
+	var selector = $('#' + d),
+		hidden = selector.data("value") == "1" ? "0" : "1";
+	selector.data("value", hidden);
+
+	if (selector.data("value") == selector.data("init")) {
+		revokeChange(d);
+		selector.removeClass("changed");
+	} else {
+		pushChange(d);
+		selector.addClass("changed");
+	}
+
+	if (selector.data("value") == "0") {
+		selector.find("span.glyphicon").removeClass("glyphicon-eye-open").addClass("glyphicon-eye-close");
+		selector.removeClass("occupied");
+	}
+	else {
+		selector.find("span.glyphicon").removeClass("glyphicon-eye-close").addClass("glyphicon-eye-open");
+		selector.addClass("occupied");
+	}
 }
 function editTime(d) {
 	if (d === 0) return;
@@ -158,6 +192,9 @@ function resetEverything() {
 		$(this).removeClass("changed");
 		var before = $(this).html();
 		$(this).data("before", before);
+	});
+	$(".hide-data").each(function () {
+		$(this).data("init", $(this).data("value"));
 	});
 	changed = [];
 	saving = false;

@@ -127,12 +127,33 @@ header {
         background: transparent;
         width: 100%; }
 
+@media only screen and (min-width: 817px) {
+  main {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex; } }
 main .toggle-aside,
 main aside {
+  width: 100%;
   float: left;
   font-family: "Monserrat", Helvetica, sans-serif;
   overflow: hidden;
-  height: auto; }
+  height: auto;
+  padding: 0 15px;
+  box-sizing: border-box; }
+  @media only screen and (min-width: 817px) {
+    main .toggle-aside,
+    main aside {
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      -webkit-align-self: flex-start;
+      -ms-flex-item-align: flex-start;
+      align-self: flex-start;
+      -webkit-order: 0;
+      -ms-flex-order: 0;
+      order: 0;
+      width: 270px !important; } }
   main .toggle-aside .panel-heading,
   main aside .panel-heading {
     padding: 8px 15px 5px; }
@@ -170,15 +191,26 @@ main section div.row div.panel:not(.no-shadow) {
   -webkit-box-shadow: 0 4px 10px 0px rgba(15, 15, 15, 0.3);
   -moz-box-shadow: 0 4px 10px 0px rgba(15, 15, 15, 0.3);
   box-shadow: 0 4px 10px 0px rgba(15, 15, 15, 0.3); }
-@media only screen and (min-width: 817px) {
-  main section [class^="col-"] {
-    padding-left: 0 !important; } }
-main section .headline {
-  font-family: "Monserrat", Helvetica, sans-serif;
-  margin: 10px 5px;
-  font-size: 1.7em; }
-main section .col-overflow .panel {
-  overflow: auto; }
+main section {
+  box-sizing: border-box; }
+  @media only screen and (min-width: 817px) {
+    main section {
+      -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      -webkit-align-self: flex-start;
+      -ms-flex-item-align: flex-start;
+      align-self: flex-start;
+      -webkit-order: 0;
+      -ms-flex-order: 0;
+      order: 0;
+      width: 270px !important; } }
+  main section .headline {
+    font-family: "Monserrat", Helvetica, sans-serif;
+    margin: 10px 5px;
+    font-size: 1.7em; }
+  main section .col-overflow .panel {
+    overflow: auto; }
 main .btn {
   font-family: "Monserrat", Helvetica, sans-serif;
   font-size: 0.9em; }
@@ -190,7 +222,7 @@ main .btn {
   color: #c75554; }
 
 .edit.occupied {
-  color: #f7af4b; }
+  color: #e6ac5a; }
 
 .edit.changed {
   color: #699a4e; }

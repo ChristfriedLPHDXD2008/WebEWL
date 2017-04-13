@@ -101,6 +101,7 @@ class Constructor
 				]);
 				$this->jsfiles[]	= "OpenLayers.js";
 				$this->jsfiles[]	= "OpenStreetMap.js";
+				$this->jsfiles[]	= "views/store.js";
 				$this->viewfile		= "store.php";
 				break;
 			case "kontakt":
@@ -150,7 +151,7 @@ class Constructor
 				);
 				break;
 			case "admin":
-				$this->title	= $this->title == TITLE_ADMIN;
+				$this->title	= $this->title ?? TITLE_ADMIN;
 				$this->modfile	= __FRONTEND__ . "/admin.php";
 				$this->cssfiles	= array_merge(
 					[CSS_Bootstrap],
