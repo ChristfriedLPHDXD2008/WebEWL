@@ -52,7 +52,7 @@ html, body {
   width: 100%; }
 
 html {
-  background: url("/img/beans.jpg") fixed;
+  background: url("/img/beans-sm.jpg") fixed;
   background-size: cover; }
 
 body {

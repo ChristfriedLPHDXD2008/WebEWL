@@ -16,17 +16,26 @@
 			</div>
 		<?php }
 		
-		if (!empty($_COOKIE[C_LogStr.Cs_FPH]) && !empty($_COOKIE[C_LogStr.Cs_UID]))
-		{
-			?>
+		if (!empty($_COOKIE[C_LogStr.Cs_FPH]) && !empty($_COOKIE[C_LogStr.Cs_UID])) { ?>
 			
 			<div class="panel panel-default">
 				<div class="panel-heading text-center">Pax et <b>Admin</b></div>
 				<div class="panel-body">
-					<div class="spinner-wrapper">
-						<div class="spinner one"><div class="spinner-bg"></div></div>
-						<div class="spinner two"><div class="spinner-bg"></div></div>
-					</div>
+					<svg width='100%' height='250px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-ripple" style="margin: 50px auto;">
+						<rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect>
+						<g>
+							<animate attributeName="opacity" dur="3s" repeatCount="indefinite" begin="0s" keyTimes="0;0.33;1" values="1;1;0"></animate>
+							<circle cx="50" cy="50" r="40" stroke="#afafb7" fill="none" stroke-width="6" stroke-linecap="round">
+								<animate attributeName="r" dur="3s" repeatCount="indefinite" begin="0s" keyTimes="0;0.33;1" values="0;22;44"></animate>
+							</circle>
+						</g>
+						<g opacity="0">
+							<animate attributeName="opacity" dur="3s" repeatCount="indefinite" begin="1.5s" keyTimes="0;0.33;1" values="1;1;0"></animate>
+							<circle cx="50" cy="50" r="40" stroke="#FFD45B" fill="none" stroke-width="6" stroke-linecap="round">
+								<animate attributeName="r" dur="3s" repeatCount="indefinite" begin="1.5s" keyTimes="0;0.33;1" values="0;22;44"></animate>
+							</circle>
+						</g>
+					</svg>
 				</div>
 			</div>
 			

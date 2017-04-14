@@ -10,7 +10,7 @@ $constr = Constructor::getInstance();
     <meta name="viewport" content="width=device-width, min-width=400, min-device-width=400, initial-scale=1" />
     <meta name="description" content="Pax et Bonum. Eine Welt Laden e.V." />
     <meta name="keywords" content="Eine Welt Laden, Pax et bonum, Bischofswerda, Dresden, Kaffee, Fair Trade" />
-    <meta name="author" content="Medienwerkstatt Bishofswerda" />
+    <meta name="author" content="Medienwerkstatt Bischofswerda" />
 	<title><?=$constr->headline?$constr->headline . " - " : null?><?=$constr->title?></title>
 	<link rel="shortcut icon" href="/img/favicon.png" type="image/png"/>
 <?php

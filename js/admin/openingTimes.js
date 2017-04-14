@@ -70,11 +70,17 @@ function hiddenDay(d) {
 	}
 
 	if (selector.data("value") == "0") {
-		selector.find("span.glyphicon").removeClass("glyphicon-eye-open").addClass("glyphicon-eye-close");
+		selector.find("span.glyphicon").removeClass("glyphicon-eye-close").addClass("glyphicon-eye-open");
+		selector.find("span").tooltip('hide')
+			.attr('data-original-title', 'Tag für Kunden ausblenden')
+			.tooltip('fixTitle');
 		selector.removeClass("occupied");
 	}
 	else {
-		selector.find("span.glyphicon").removeClass("glyphicon-eye-close").addClass("glyphicon-eye-open");
+		selector.find("span.glyphicon").removeClass("glyphicon-eye-open").addClass("glyphicon-eye-close");
+		selector.find("span").tooltip('hide')
+			.attr('data-original-title', 'Tag für Kunden einblenden')
+			.tooltip('fixTitle');
 		selector.addClass("occupied");
 	}
 }

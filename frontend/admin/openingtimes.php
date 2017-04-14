@@ -54,7 +54,7 @@ $days = $optim->getOpeningTimes();
 							<a href="#" id="d<?=$day["DID"]?>4" class="edit <?=$day["hidden"]?"occupied":null?> hide-data"
 							   onclick="hiddenDay('d<?=$day["DID"]?>4'); return false;"
 							   data-value="<?=$day["hidden"]?>" data-init="<?=$day["hidden"]?>"><span
-										class="eye glyphicon glyphicon-eye-<?=$day["hidden"]?"open":"close"?>"
+										class="eye glyphicon glyphicon-eye-<?=$day["hidden"]?"close":"open"?>"
 										data-toggle="tooltip" data-placement="left" title="Tag für Kunden <?=$day["hidden"]?"einblenden":"ausblenden"?>"></span></a>
 							&nbsp;
 							<a href="#" class="edit"
@@ -71,9 +71,9 @@ $days = $optim->getOpeningTimes();
 				<tr>
 					<td colspan="7">
 						<em>
-							Zeiten durch Klicken bearbeiten - Änderungen werden <span class="changed">markiert</span>.
-							<br>Gleiche Zeiten an einem Tag werden als "<span class="closed">geschlossen</span>" angezeigt.
-							<br>Manuelle Eingabe überschreibt die Zeiten.
+							Zeiten durch Klicken bearbeiten.
+							<br>Manuelle Eingabe überschreibt die jeweiligen Öffnungszeiten.
+							<br><span class="edit changed">Ungespeicherte Änderung</span> - <span class="edit closed">Geschlossen</span> - <span class="edit occupied">Aktive Option</span>
 							<noscript>
 								<br><span class="text-danger">Javascript muss zum Bearbeiten aktiviert sein.</span>
 							</noscript>
