@@ -3,8 +3,12 @@ function toggleKonvention(src) {
 		src.parent().parent().removeClass("shown");
 		return;
 	}
-	$(".wl-konvention.shown").removeClass("shown");
-	src.parent().parent().toggleClass("shown");
+	if ($(".wl-konvention.shown").length > 0) {
+		$(".wl-konvention.shown").removeClass("shown");
+		setTimeout(function () {
+			src.parent().parent().addClass("shown");
+		}, 300);
+	} else src.parent().parent().addClass("shown");
 }
 
 $(document).ready(function () {

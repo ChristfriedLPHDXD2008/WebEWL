@@ -398,15 +398,23 @@ article {
     width: 170px; }
 
 .wl-konvention {
-  transition: margin 0.5s 0.5s ease; }
+  transition: margin 0.3s 0.6s linear; }
+  .wl-konvention .wl-konv-text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-in-out; }
   .wl-konvention.shown {
-    margin: 15px 0;
-    transition: margin 0.5s ease-in-out; }
+    margin: 20px 0;
+    transition: margin 0.3s linear; }
     .wl-konvention.shown a {
       color: #23527c !important; }
     .wl-konvention.shown .wl-konv-text {
       max-height: 500px;
-      transition: max-height 0.5s 0.5s ease-in-out; }
+      transition: max-height 0.7s 0.3s ease-in-out; }
+  .wl-konvention:first-of-type {
+    margin-top: 20px; }
+  .wl-konvention:last-of-type {
+    margin-bottom: 0; }
   .wl-konvention a {
     transition: color 0.1s ease; }
     .wl-konvention a:hover {
@@ -422,9 +430,5 @@ article {
       display: inline-block;
       width: 16px;
       margin-right: 5px; }
-  .wl-konvention .wl-konv-text {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out; }
 
 /*# sourceMappingURL=stylesheet.css.map */
