@@ -37,21 +37,24 @@ class Constructor
 				break;
 			case "posts":
 				$this->headline		= "Posts Verwalten";
+				$this->viewfile		= "posts.php";
 				if (@$_GET[2] == "verfassen")
-					$this->headline	= "Neuen Post Verfassen";
+				{ $this->headline	= "Neuen Post Verfassen"; }
 				if (@$_GET[2] == "edit")
 					$this->headline	= "Post Bearbeiten";
-				$this->viewfile		= "posts.php";
 				break;
 			case "benutzer":
 				$this->headline		= "Benutzer Verwalten";
+				$this->viewfile		= "users.php";
 				if (@$_GET[2] == "anlegen")
+				{
 					$this->headline	= "Neuen Benutzer Anlegen";
+					$this->viewfile = "users/user_add.php";
+				}
 				if (@$_GET[2] == "bearbeiten")
 					$this->headline	= "Benutzerkonto Bearbeiten";
 				if (@$_GET[2] == "ich")
 					$this->headline	= "Mein Account";
-				$this->viewfile		= "users.php";
 				break;
 		}
 		else switch (@$_GET[0]) {
