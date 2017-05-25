@@ -78,7 +78,7 @@ nav {
 }
 
 .navbar-custom {
-	background-color: darken($navbar-default-bg, 10%);
+	background-color: darken($navbar-default-bg, 9%);
 	border-color: darken($navbar-default-border, 10%);
 	border-radius: 0;
 	
@@ -381,6 +381,13 @@ aside#sidebar {
 	}
 }
 
+#content {
+	background-color: #e9efd3;
+	blockquote {
+		border-left-color: #a8bba4;
+	}
+}
+
 article {
 	@include flex-item(1, 1, 75%);
 	display: block;
@@ -393,7 +400,7 @@ article {
 	}
 	h1 { text-transform: none; margin-bottom: 30px; }
 	
-	hr { margin: 45px 0; }
+	hr { margin: 35px 0; border-color: #a8bba4; }
 	
 	@media #{$media_screen "(max-width:" $screen-md")"} {
 		@include flex-item(1, 1, 100%);
