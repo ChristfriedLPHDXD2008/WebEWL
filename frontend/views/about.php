@@ -3,7 +3,8 @@
 	<a href="/content/25jahre_size_Y1920.jpg" class="img-popup-trigger">
 		<img src="/content/25jahre_crop_wide.jpg" class="img-wide" id="image-1" />
 	</a>
-	<hr>
+	<br>
+	<br>
 </section>
 <section id="verein-und-weltladen">
 	<h3>Verein und Weltladen</h3>
@@ -44,7 +45,8 @@
 	<p>
 		Sie als Verbraucher können mit dem Einkaufskorb etwas gegen Mangelernährung, Armut und Ungerechtigkeit im Welthandel tun und leisten außerdem einen Beitrag zum Umweltschutz.
 	</p>
-	<hr>
+	<br>
+	<br>
 </section>
 <section>
 	<a href="/content/2015 Lesung mit Anant Kumar.jpg" class="img-popup-trigger">

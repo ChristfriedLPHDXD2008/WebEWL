@@ -3,8 +3,9 @@
 # =========================
 
 .idea
-styles/scss
+#styles/scss
 secure
+libs
 
 # =========================
 # Operating System Files

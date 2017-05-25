@@ -1,0 +1,8 @@
+@import "variation";
+
+article {
+	background-color: lighten(adjust_hue($brand-primary, -3deg), 2%) !important;
+	h1 {
+		color: $brand-secondary;
+	}
+}

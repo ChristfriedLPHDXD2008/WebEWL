@@ -296,6 +296,34 @@ main .btn {
     content: " ";
     height: 100%; } }
 
+#addUser .avatar-select .tptr {
+  text-align: right; }
+  @media only screen and (max-width: 992px) {
+    #addUser .avatar-select .tptr {
+      text-align: center; } }
+  #addUser .avatar-select .tptr .tptr-inner {
+    display: inline-block;
+    max-width: 100%; }
+    #addUser .avatar-select .tptr .tptr-inner .tptr-widget {
+      height: 230px;
+      width: 230px;
+      border-radius: 230px;
+      max-width: 100%;
+      background-position: center center; }
+#addUser #addUserForm .form-group > label {
+  text-align: right; }
+#addUser #addUserForm fieldset label {
+  font-weight: normal; }
+  #addUser #addUserForm fieldset label input[type=checkbox] {
+    margin: 0 5px 0 15px; }
+
+button.tptr-save {
+  background-color: #337ab7 !important; }
+
+.tptr-source-image-preview div,
+.tptr-big-image {
+  background-position: center center; }
+
 @keyframes dismiss-status {
   0% {
     opacity: 0;

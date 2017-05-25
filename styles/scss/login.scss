@@ -1,0 +1,70 @@
+@import "variation";
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+html {
+	background: url("/img/beans-sm.jpg") fixed;
+	background-size: cover;
+}
+
+body {
+	background: url("/img/raster-2x2.png") repeat;
+}
+
+.row {
+	margin-top: 10%;
+}
+
+.alert {
+	color: darken($brand-secondary, 50%);
+	background-color: lighten($brand-secondary, 20%);
+	border: 1px solid #333;
+}
+
+.panel {
+	border: 1px solid #333;
+	margin-bottom: 5px;
+	.panel-heading {
+		font-size: 1.4em;
+		color: darken($brand-secondary, 50%);
+		background-color: lighten($brand-secondary, 20%);
+		cursor: default;
+	}
+}
+
+label {
+	font-weight: normal;
+}
+
+.btn-login {
+	width: 100%;
+	font-weight: bold;
+	color: darken($brand-secondary, 50%);
+	background: lighten($brand-secondary, 20%);
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	transition: 0.2s ease;
+	&:hover {
+		background-color: lighten($brand-secondary, 0);
+		color: #111;
+	}
+}
+
+a.link-back {
+	font-size: 0.8em;
+	color: lighten($brand-secondary, 20%);
+	transition: 0.2s ease;
+	text-shadow: 3px 1px 5px #000, 3px 1px 6px #000, 3px 1px 8px #000, 3px 1px 10px #000;
+	&:hover {
+		color: lighten($brand-secondary, 0);
+		text-decoration: none;
+	}
+	small {
+		font-size: 0.8em;
+	}
+}

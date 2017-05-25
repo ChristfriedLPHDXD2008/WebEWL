@@ -377,6 +377,8 @@ article {
   article h1 {
     text-transform: none;
     margin-bottom: 30px; }
+  article hr {
+    margin: 45px 0; }
   @media only screen and (max-width: 992px) {
     article {
       -webkit-flex: 1 1 100%;

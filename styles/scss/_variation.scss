@@ -1,0 +1,187 @@
+@import "bootstrap/bootstrap/variables";
+@import "bootstrap/bootstrap/mixins";
+
+@mixin font-face($family, $src, $style: normal, $weight: normal) {
+	@font-face {
+		font-family: $family;
+		src: url('#{$src}.eot'); // IE9 compat
+		src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+		url('#{$src}.woff') format('woff'), // standards
+		url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+		url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+		
+		font-style: $style;
+		font-weight: $weight;
+	}
+}
+
+@mixin noselect() {
+	-webkit-touch-callout:	none;
+	-webkit-user-select:	none;
+	-khtml-user-select:		none;
+	-moz-user-select:		none;
+	-ms-user-select:		none;
+	user-select:			none;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+	@if $inset {
+		-webkit-box-shadow: inset $left $top $blur $color;
+		-moz-box-shadow: inset $left $top $blur $color;
+		box-shadow: inset $left $top $blur $color;
+	} @else {
+		-webkit-box-shadow: $left $top $blur $color;
+		-moz-box-shadow: $left $top $blur $color;
+		box-shadow: $left $top $blur $color;
+	}
+}
+
+@mixin flex-container($direction: row, $justify-content: flex-start, $align-items: stretch, $align-content: stretch, $wrap: nowrap) {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	
+	@if $direction != row {
+		-webkit-flex-direction:	$direction;
+		-ms-flex-direction:		$direction;
+		flex-direction:			$direction;
+	}
+	
+	@if $align-items != stretch {
+		-webkit-align-items:	$align-items;
+		-ms-flex-align:			$align-items;
+		align-items:			$align-items;
+	}
+	
+	@if $align-content != stretch {
+		-webkit-align-content:	$align-content;
+		-ms-flex-line-pack:		$align-content;
+		align-content: 			$align-content;
+	}
+	
+	@if $justify-content != flex-start {
+		-webkit-justify-content:	$justify-content;
+		justify-content:			$justify-content;
+	}
+	
+	@if $wrap != nowrap {
+		-webkit-flex-wrap: 	$wrap;
+		-ms-flex-wrap: 		$wrap;
+		flex-wrap: 			$wrap;
+	}
+}
+
+@mixin flex-item($grow: 0, $shrink: 0, $basis: auto, $align: auto, $order: 0) {
+	-webkit-flex:	$grow $shrink $basis;
+	-ms-flex:		$grow $shrink $basis;
+	flex:			$grow $shrink $basis;
+	
+	-webkit-align-self:		$align;
+	-ms-flex-item-align:	$align;
+	align-self:				$align;
+	
+	-webkit-order:	$order;
+	-ms-flex-order:	$order;
+	order:			$order;
+}
+
+@mixin outline($colour: red, $offset: -2px, $thickness: 2px, $style: solid) {
+	outline: $thickness $style $colour;
+	outline-offset: $offset;
+}
+
+button, .btn {
+	outline: 0 !important;
+	&:focus, &:active {
+		outline: 0 !important;
+	}
+}
+
+$brand-primary: #1c290a;
+$brand-secondary: #ffd45b;
+$brand-danger: #ff524f;
+
+$alert-danger-bg: #ffdfdc;
+$alert-danger-text: #e5524f;
+
+$btn-secondary-bg: #444;
+$btn-secondary-border: #222;
+$btn-secondary-color: #eee;
+
+$icon-font-path: "/fonts/";
+
+$font-family-serif: 'Georgia', serif;
+$font-family-base: $font-family-serif;
+$font-size-base: 18px;
+
+$font-alt: "Monserrat", Helvetica, sans-serif;
+
+$media_screen: "only screen and";
+
+// Extra small screen / phone
+$screen-xs:                  480px;
+$screen-xs-min:              $screen-xs;
+$screen-phone:               $screen-xs-min;
+
+// Small screen / tablet
+$screen-sm:                  817px;
+$screen-sm-min:              $screen-sm;
+$screen-tablet:              $screen-sm-min;
+
+// Medium screen / desktop
+$screen-md:                  992px;
+$screen-md-min:              $screen-md;
+$screen-desktop:             $screen-md-min;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px;
+$screen-lg-min:              $screen-lg;
+$screen-lg-desktop:          $screen-lg-min;
+
+$xs-min:	"(min-width:" $screen-xs-min ")";
+$xs-range:	"only screen and (min-width: 0) and (max-width:" $screen-sm ")";
+$sm-range:	"only screen and (min-width:" $screen-sm-min ") and (max-width:" $screen-sm-max ")";
+$md-range:	"only screen and (min-width:" $screen-md-min ") and (max-width:" $screen-md-max ")";
+
+$lg-min:	"(min-width:" $screen-lg-min ")";
+
+@media (max-width: ($screen-sm - 1)) {
+	.navbar-header {
+		float: none;
+	}
+	.navbar-left,.navbar-right {
+		float: none !important;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+	.navbar-collapse {
+		border-top: 1px solid transparent;
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	}
+	.navbar-fixed-top {
+		top: 0;
+		border-width: 0 0 1px;
+	}
+	.navbar-collapse.collapse {
+		display: none !important;
+	}
+	.navbar-nav {
+		float: none !important;
+		margin-top: 7.5px;
+	}
+	.navbar-nav > li {
+		float: none;
+	}
+	.navbar-nav > li >a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.collapse.in {
+		display: block !important;
+	}
+}
+
+.alert { @include box-shadow(3px, 0, 5px -2px, #bbb); }
+
+.text-primary { color: $brand-primary; }

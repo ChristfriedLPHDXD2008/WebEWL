@@ -46,6 +46,8 @@ class Constructor
 			case "benutzer":
 				$this->headline		= "Benutzer Verwalten";
 				$this->viewfile		= "users.php";
+				$this->cssfiles[]	= "tapatar.min.css";
+				$this->jsfiles[]	= "tapatar.min.js";
 				if (@$_GET[2] == "anlegen")
 				{
 					$this->headline	= "Neuen Benutzer Anlegen";
